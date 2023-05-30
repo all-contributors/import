@@ -100,7 +100,7 @@ async function run(octokit) {
           .map((endorsement) =>
             columns.map((column) => endorsement[column]).join(",")
           )
-          .join("\n")
+          .join("\n") + "\n"
       );
     }
   }
