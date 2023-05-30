@@ -19,6 +19,7 @@
   "devDependencies": {
     "pino-pretty": "^10.0.0"
   },
+  "repository": "github:gr2m/all-contributors-import-script",
   "scripts": {
     "import": "node ./import.js | pino-pretty"
   },
