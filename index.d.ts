@@ -1,4 +1,7 @@
 import { Endpoints } from "@octokit/types";
+import { Octokit } from "@octokit/core";
+
+export default function main(octokit: Octokit): Promise<void>;
 
 // -- static columns
 // id uuid default uuid_generate_v4() not null,
