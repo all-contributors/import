@@ -4,20 +4,13 @@ import { writeFileSync, mkdirSync, rmSync, appendFileSync } from "node:fs";
 
 import pino from "pino";
 
-import Octokit from "./lib/octokit.js";
 import { findRepositoryFileEndorsements } from "./lib/find-repository-file-endorsements.js";
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
-
-run(octokit);
-
 /**
- * @param {InstanceType<typeof Octokit>} octokit
+ * @param {InstanceType<typeof import('./lib/octokit.js').default>} octokit
  */
-async function run(octokit) {
-  const mainLogger = pino().child({ name: "main" });
+export default async function run(octokit, logger = pino()) {
+  const mainLogger = logger.child({ name: "main" });
 
   const { data: user } = await octokit.request("GET /user");
   const {
@@ -47,7 +40,7 @@ async function run(octokit) {
   ];
   writeFileSync(".results/endorsements.csv", columns.join(",") + "\n");
 
-  /** @type {import(".").State} */
+  /** @type {import("./index.js").State} */
   const state = { userIdByLogin: {}, numEndorsements: 0 };
 
   // search for ".all-contributorsrc" files
