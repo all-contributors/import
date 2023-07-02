@@ -6,10 +6,20 @@ import pino from "pino";
 
 import { findRepositoryFileEndorsements } from "./lib/find-repository-file-endorsements.js";
 
+const SOURCE_FILES_COLUMNS = [
+  "owner_id",
+  "owner_login",
+  "repo_id",
+  "repo_name",
+  "path",
+  "last_commit_sha",
+];
+const SOURCE_FILES_PATH = "data/source-files.csv";
+
 /**
  * @type {import(".").DatabaseColumnKeys}
  */
-const COLUMNS = [
+const ENDORSEMENTS_COLUMNS = [
   "seq",
   "owner_id",
   "owner_login",
@@ -23,6 +33,8 @@ const COLUMNS = [
   "created_at",
   "source_context_url",
 ];
+
+const ENDORSEMENTS_PATH = "data/endorsements.csv";
 
 /**
  * @param {InstanceType<typeof import('./lib/octokit.js').default>} octokit
@@ -48,7 +60,8 @@ export default async function run(octokit, logger = pino()) {
   rmSync(".results", { recursive: true, force: true });
   mkdirSync(".results", { recursive: true });
 
-  writeFileSync(".results/endorsements.csv", COLUMNS.join(",") + "\n");
+  writeFileSync(SOURCE_FILES_PATH, SOURCE_FILES_COLUMNS.join(",") + "\n");
+  writeFileSync(ENDORSEMENTS_PATH, ENDORSEMENTS_COLUMNS.join(",") + "\n");
 
   /** @type {import("./index.js").State} */
   const state = { userIdByLogin: {}, numEndorsements: 0 };
@@ -62,6 +75,7 @@ export default async function run(octokit, logger = pino()) {
 
   let numTotalSearchResults;
   let numSearchResults = 0;
+  let seq = 0;
   for await (const response of searchIterator) {
     if (!numTotalSearchResults) {
       numTotalSearchResults = response.data.total_count;
@@ -86,24 +100,39 @@ export default async function run(octokit, logger = pino()) {
       "Handling search result"
     );
 
+    // iterate through every found .all-contributorsrc file
     for (const searchResult of response.data) {
-      const newEndorsements = await findRepositoryFileEndorsements(
+      const result = await findRepositoryFileEndorsements(
         octokit,
         mainLogger,
         state,
         searchResult
       );
 
-      if (!newEndorsements) continue;
+      if (!result) continue;
 
-      let seq = 0;
+      const { endorsements, lastCommitSha } = result;
 
       appendFileSync(
-        ".results/endorsements.csv",
-        newEndorsements
+        SOURCE_FILES_PATH,
+        [
+          searchResult.repository.owner.id,
+          searchResult.repository.owner.login,
+          searchResult.repository.id,
+          searchResult.repository.name,
+          searchResult.path,
+          lastCommitSha,
+        ].join(",") + "\n"
+      );
+
+      appendFileSync(
+        ENDORSEMENTS_PATH,
+        endorsements
           .map((endorsement) => [
             ++seq,
-            ...COLUMNS.map((column) => endorsement[column]).join(","),
+            ...ENDORSEMENTS_COLUMNS.map((column) => endorsement[column]).join(
+              ","
+            ),
           ])
           .join("\n") + "\n"
       );
