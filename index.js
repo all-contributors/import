@@ -128,12 +128,14 @@ export default async function run(octokit, logger = pino()) {
       appendFileSync(
         ENDORSEMENTS_PATH,
         endorsements
-          .map((endorsement) => [
-            ++seq,
-            ...ENDORSEMENTS_COLUMNS.map((column) => endorsement[column]).join(
-              ","
-            ),
-          ])
+          .map((endorsement) =>
+            [
+              ++seq,
+              ...ENDORSEMENTS_COLUMNS.slice(1).map(
+                (column) => endorsement[column]
+              ),
+            ].join(",")
+          )
           .join("\n") + "\n"
       );
     }
