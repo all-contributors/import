@@ -7,6 +7,24 @@ import pino from "pino";
 import { findRepositoryFileEndorsements } from "./lib/find-repository-file-endorsements.js";
 
 /**
+ * @type {import(".").DatabaseColumnKeys}
+ */
+const COLUMNS = [
+  "seq",
+  "owner_id",
+  "owner_login",
+  "repo_id",
+  "repo_name",
+  "creator_user_id",
+  "creator_user_login",
+  "recipient_user_id",
+  "recipient_user_login",
+  "type",
+  "created_at",
+  "source_context_url",
+];
+
+/**
  * @param {InstanceType<typeof import('./lib/octokit.js').default>} octokit
  */
 export default async function run(octokit, logger = pino()) {
@@ -30,15 +48,7 @@ export default async function run(octokit, logger = pino()) {
   rmSync(".results", { recursive: true, force: true });
   mkdirSync(".results", { recursive: true });
 
-  const columns = [
-    "repo_id",
-    "creator_user_id",
-    "recipient_user_id",
-    "type",
-    "created_at",
-    "source_context_url",
-  ];
-  writeFileSync(".results/endorsements.csv", columns.join(",") + "\n");
+  writeFileSync(".results/endorsements.csv", COLUMNS.join(",") + "\n");
 
   /** @type {import("./index.js").State} */
   const state = { userIdByLogin: {}, numEndorsements: 0 };
@@ -86,13 +96,15 @@ export default async function run(octokit, logger = pino()) {
 
       if (!newEndorsements) continue;
 
+      let seq = 0;
+
       appendFileSync(
         ".results/endorsements.csv",
         newEndorsements
-          // repo_id,creator_user_id,recipient_user_id,type,created_at,source_context_url
-          .map((endorsement) =>
-            columns.map((column) => endorsement[column]).join(",")
-          )
+          .map((endorsement) => [
+            ++seq,
+            ...COLUMNS.map((column) => endorsement[column]).join(","),
+          ])
           .join("\n") + "\n"
       );
     }
