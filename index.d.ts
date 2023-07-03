@@ -3,6 +3,26 @@ import { Octokit } from "@octokit/core";
 
 export default function main(octokit: Octokit): Promise<void>;
 
+export type SourceFilesColumnKeys = [
+  "owner_id",
+  "owner_login",
+  "repo_id",
+  "repo_name",
+  "path",
+  "last_commit_sha",
+  "last_updated_at"
+];
+
+export type SourceFile = {
+  owner: string;
+  ownerId: number;
+  repo: string;
+  repoId: number;
+  path: string;
+  lastCommitSha?: string;
+  lastUpdatedAt?: string;
+};
+
 export type DatabaseColumnKeys = [
   "seq",
   "owner_id",
@@ -74,4 +94,6 @@ export type User = {
 export type State = {
   userIdByLogin: Record<string, number>;
   numEndorsements: number;
+  knownSourceFiles: Record<string, SourceFile>;
+  knownEndorsements: Set<string>;
 };

@@ -1,40 +1,18 @@
 // @ts-check
 
-import { writeFileSync, mkdirSync, rmSync, appendFileSync } from "node:fs";
+import { writeFile, mkdir, rm, appendFile, readFile } from "node:fs/promises";
 
 import pino from "pino";
 
 import { findRepositoryFileEndorsements } from "./lib/find-repository-file-endorsements.js";
-
-const SOURCE_FILES_COLUMNS = [
-  "owner_id",
-  "owner_login",
-  "repo_id",
-  "repo_name",
-  "path",
-  "last_commit_sha",
-];
-const SOURCE_FILES_PATH = "data/source-files.csv";
-
-/**
- * @type {import(".").DatabaseColumnKeys}
- */
-const ENDORSEMENTS_COLUMNS = [
-  "seq",
-  "owner_id",
-  "owner_login",
-  "repo_id",
-  "repo_name",
-  "creator_user_id",
-  "creator_user_login",
-  "recipient_user_id",
-  "recipient_user_login",
-  "type",
-  "created_at",
-  "source_context_url",
-];
-
-const ENDORSEMENTS_PATH = "data/endorsements.csv";
+import {
+  SOURCE_FILES_COLUMNS,
+  SOURCE_FILES_PATH,
+  ENDORSEMENTS_COLUMNS,
+  ENDORSEMENTS_PATH,
+} from "./lib/constants.js";
+import { endorsementToUniqueKey } from "./lib/endorsement-to-unique-key.js";
+import { sourceFilesToUniqueKey } from "./lib/source-file-to-unique-key.js";
 
 /**
  * @param {InstanceType<typeof import('./lib/octokit.js').default>} octokit
@@ -57,14 +35,145 @@ export default async function run(octokit, logger = pino()) {
     `Authenticated`
   );
 
-  rmSync(".results", { recursive: true, force: true });
-  mkdirSync(".results", { recursive: true });
+  // we use the `.results` directory to store internal data for debugging
+  await rm(".results", { recursive: true, force: true });
+  await mkdir(".results", { recursive: true });
 
-  writeFileSync(SOURCE_FILES_PATH, SOURCE_FILES_COLUMNS.join(",") + "\n");
-  writeFileSync(ENDORSEMENTS_PATH, ENDORSEMENTS_COLUMNS.join(",") + "\n");
+  const knownSourceFilesData = await readFile(SOURCE_FILES_PATH, "utf8").catch(
+    () => ""
+  );
+  const currentEndorsementsData = await readFile(
+    ENDORSEMENTS_PATH,
+    "utf8"
+  ).catch(() => "");
+
+  if (!knownSourceFilesData) {
+    await writeFile(SOURCE_FILES_PATH, SOURCE_FILES_COLUMNS.join(",") + "\n");
+  }
+  if (!currentEndorsementsData) {
+    await writeFile(ENDORSEMENTS_PATH, ENDORSEMENTS_COLUMNS.join(",") + "\n");
+  }
+
+  /**
+   * @type {Record<string, Required<import(".").SourceFile>>}
+   */
+  const knownSourceFiles = knownSourceFilesData
+    .trim()
+    .split("\n")
+    .slice(1)
+    .reduce((sourceFiles, line) => {
+      const lineObject = SOURCE_FILES_COLUMNS.reduce((result, column, i) => {
+        result[column] = line.split(",")[i];
+        return result;
+      }, {});
+
+      const sourceFile = {
+        owner: lineObject["owner_login"],
+        ownerId: lineObject["owner_id"],
+        repo: lineObject["repo_name"],
+        repoId: lineObject["repo_id"],
+        path: lineObject["path"],
+        lastCommitSha: lineObject["last_commit_sha"],
+        lastUpdatedAt: lineObject["last_updated_at"],
+      };
+
+      const key = sourceFilesToUniqueKey(sourceFile);
+
+      return {
+        ...sourceFiles,
+        [key]: sourceFile,
+      };
+    }, {});
+
+  const knownEndorsements = new Set(
+    currentEndorsementsData
+      .trim()
+      .split("\n")
+      .slice(1)
+      .map((line) => {
+        const lineObject = ENDORSEMENTS_COLUMNS.reduce((result, column, i) => {
+          result[column] = line.split(",")[i];
+          return result;
+        }, {});
+
+        // @ts-expect-error
+        return endorsementToUniqueKey(lineObject);
+      })
+  );
 
   /** @type {import("./index.js").State} */
-  const state = { userIdByLogin: {}, numEndorsements: 0 };
+  const state = {
+    userIdByLogin: {},
+    numEndorsements: 0,
+    knownSourceFiles,
+    knownEndorsements,
+  };
+
+  const numKnownSourceFiles = Object.keys(knownSourceFiles).length;
+  if (numKnownSourceFiles > 0) {
+    mainLogger.info(
+      `Checking for updates in ${numKnownSourceFiles} known source files`
+    );
+  } else {
+    mainLogger.info(`No known source files found in ${SOURCE_FILES_PATH}`);
+  }
+
+  // iterate through all known source files and load only new changes
+  // iterate through every found .all-contributorsrc file
+  for (const sourceFile of Object.values(knownSourceFiles)) {
+    const sourceFileLogger = mainLogger.child({
+      owner: sourceFile.owner,
+      repo: sourceFile.owner,
+      path: sourceFile.path,
+      lastCommitSha: sourceFile.lastCommitSha,
+    });
+
+    const result = await findRepositoryFileEndorsements(
+      octokit,
+      mainLogger,
+      state,
+      sourceFile
+    );
+
+    if (!result) {
+      continue;
+    }
+
+    const { endorsements, lastCommitSha, lastUpdatedAt } = result;
+
+    if (lastCommitSha === sourceFile.lastCommitSha) {
+      sourceFileLogger.info(`No changes found`);
+
+      continue;
+    }
+
+    // update source files file with new last commit sha
+    // TODO: we might need to optimize this if it gets to slow.
+    await writeFile(
+      SOURCE_FILES_PATH,
+      knownSourceFilesData.replace(
+        `${sourceFile.lastCommitSha},${sourceFile.lastUpdatedAt}`,
+        `${lastCommitSha},${lastUpdatedAt}`
+      )
+    );
+
+    // add endorsement
+    await appendFile(
+      ENDORSEMENTS_PATH,
+      endorsements
+        .map((endorsement) =>
+          [
+            ++seq,
+            ...ENDORSEMENTS_COLUMNS.slice(1).map(
+              (column) => endorsement[column]
+            ),
+          ].join(",")
+        )
+        .join("\n") + "\n"
+    );
+
+    sourceFileLogger.info(`${endorsements.length} endorsements found`);
+  }
 
   // search for ".all-contributorsrc" files
   // https://docs.github.com/rest/search#search-code
@@ -102,18 +211,39 @@ export default async function run(octokit, logger = pino()) {
 
     // iterate through every found .all-contributorsrc file
     for (const searchResult of response.data) {
+      const sourceFileLogger = mainLogger.child({
+        owner: searchResult.repository.owner.login,
+        repo: searchResult.repository.name,
+        path: searchResult.path,
+      });
+      /** @type {import(".").SourceFile} */
+      const sourceFile = {
+        owner: searchResult.repository.owner.login,
+        ownerId: searchResult.repository.owner.id,
+        repo: searchResult.repository.name,
+        repoId: searchResult.repository.id,
+        path: searchResult.path,
+      };
+
+      const key = sourceFilesToUniqueKey(sourceFile);
+
+      if (state.knownSourceFiles[key]) {
+        sourceFileLogger.info(`Skipping known source file`);
+        continue;
+      }
+
       const result = await findRepositoryFileEndorsements(
         octokit,
         mainLogger,
         state,
-        searchResult
+        sourceFile
       );
 
       if (!result) continue;
 
-      const { endorsements, lastCommitSha } = result;
+      const { endorsements, lastCommitSha, lastUpdatedAt } = result;
 
-      appendFileSync(
+      await appendFile(
         SOURCE_FILES_PATH,
         [
           searchResult.repository.owner.id,
@@ -122,22 +252,35 @@ export default async function run(octokit, logger = pino()) {
           searchResult.repository.name,
           searchResult.path,
           lastCommitSha,
+          lastUpdatedAt,
         ].join(",") + "\n"
       );
 
-      appendFileSync(
+      // TODO: before adding new endorsements, check if they already exist
+
+      await appendFile(
         ENDORSEMENTS_PATH,
         endorsements
-          .map((endorsement) =>
-            [
+          .map((endorsement) => {
+            const key = endorsementToUniqueKey(endorsement);
+
+            if (state.knownEndorsements.has(key)) {
+              sourceFileLogger.info(`Skipping known endorsement`, { key });
+              return;
+            }
+
+            return [
               ++seq,
               ...ENDORSEMENTS_COLUMNS.slice(1).map(
                 (column) => endorsement[column]
               ),
-            ].join(",")
-          )
+            ].join(",");
+          })
+          .filter(Boolean)
           .join("\n") + "\n"
       );
+
+      sourceFileLogger.info(`${endorsements.length} endorsements found`);
     }
   }
 
