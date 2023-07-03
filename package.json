@@ -7,6 +7,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "exports": "./index.js",
+  "bin": {
+    "all-contributors-import": "./bin/cli.js"
+  },
   "dependencies": {
     "@octokit/core": "^4.2.1",
     "@octokit/plugin-paginate-graphql": "^2.0.1",
