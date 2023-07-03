@@ -75,6 +75,7 @@ export default async function run(octokit, logger = pino()) {
         path: lineObject["path"],
         lastCommitSha: lineObject["last_commit_sha"],
         lastUpdatedAt: lineObject["last_updated_at"],
+        lastFileSha: lineObject["last_file_sha"],
       };
 
       const key = sourceFilesToUniqueKey(sourceFile);
@@ -129,29 +130,33 @@ export default async function run(octokit, logger = pino()) {
       repo: sourceFile.repo,
       path: sourceFile.path,
       lastCommitSha: sourceFile.lastCommitSha,
+      lastUpdatedAt: sourceFile.lastUpdatedAt,
+      lastFileSha: sourceFile.lastFileSha,
     });
 
-    const hasChanges = await octokit
-      .request("HEAD /repos/{owner}/{repo}/contents/{path}", {
-        owner: sourceFile.owner,
-        repo: sourceFile.repo,
-        path: sourceFile.path,
-        headers: {
-          "if-none-match": `"${sourceFile.lastFileSha}"`,
-        },
-      })
-      .then(() => true)
-      .catch((error) => {
-        if (error.status === 304) {
-          return false;
-        }
+    // unfortunately HEAD requests don't seem to support conditional requests
+    // see https://docs.github.com/en/rest/overview/resources-in-the-rest-api#conditional-requests
+    // Otherwise we could add this header and check for a 304 response
+    //
+    //     headers: {
+    //       "If-None-Match": `"${sourceFile.lastFileSha}"`,
+    //     },
+    const {
+      headers: { etag },
+    } = await octokit.request("HEAD /repos/{owner}/{repo}/contents/{path}", {
+      owner: sourceFile.owner,
+      repo: sourceFile.repo,
+      path: sourceFile.path,
+    });
 
-        throw error;
-      });
+    const hasChanges =
+      // `headers.etag` usually looks like this: W/"8f39bae6a3b630823ddee0476c82463015e93232"
+      // @ts-expect-error - `etag` is always set for this endpoint
+      etag.replace(/(^(\w\/)?"|"$)/g, "") !== sourceFile.lastFileSha;
 
     if (!hasChanges) {
-      sourceFileLogger.info(`No changes found`);
-      return;
+      sourceFileLogger.info(`No new changes found`);
+      continue;
     }
 
     const result = await findRepositoryFileEndorsements(
@@ -168,15 +173,17 @@ export default async function run(octokit, logger = pino()) {
     const { endorsements, lastCommitSha, lastUpdatedAt, lastFileSha } = result;
 
     const uniqueMatchString = `${sourceFile.repoId},${sourceFile.repo},${sourceFile.path},${sourceFile.lastCommitSha}`;
+    const regex = new RegExp(`${uniqueMatchString}[^\\n]+`);
+
     // update source files file with new last commit sha
     knownSourceFilesData = knownSourceFilesData.replace(
-      new RegExp(`${uniqueMatchString}.*$`),
+      regex,
       `${uniqueMatchString},${lastUpdatedAt},${lastFileSha}`
     );
     await writeFile(SOURCE_FILES_PATH, knownSourceFilesData);
 
     if (lastCommitSha === sourceFile.lastCommitSha) {
-      sourceFileLogger.info(`No changes found`);
+      sourceFileLogger.info(`No new changes found`);
 
       continue;
     }
@@ -283,27 +290,29 @@ export default async function run(octokit, logger = pino()) {
 
       // TODO: before adding new endorsements, check if they already exist
 
-      await appendFile(
-        ENDORSEMENTS_PATH,
-        endorsements
-          .map((endorsement) => {
-            const key = endorsementToUniqueKey(endorsement);
+      if (endorsements.length > 0) {
+        await appendFile(
+          ENDORSEMENTS_PATH,
+          endorsements
+            .map((endorsement) => {
+              const key = endorsementToUniqueKey(endorsement);
 
-            if (state.knownEndorsements.has(key)) {
-              sourceFileLogger.info(`Skipping known endorsement`, { key });
-              return;
-            }
+              if (state.knownEndorsements.has(key)) {
+                sourceFileLogger.info(`Skipping known endorsement`, { key });
+                return;
+              }
 
-            return [
-              ++seq,
-              ...ENDORSEMENTS_COLUMNS.slice(1).map(
-                (column) => endorsement[column]
-              ),
-            ].join(",");
-          })
-          .filter(Boolean)
-          .join("\n") + "\n"
-      );
+              return [
+                ++seq,
+                ...ENDORSEMENTS_COLUMNS.slice(1).map(
+                  (column) => endorsement[column]
+                ),
+              ].join(",");
+            })
+            .filter(Boolean)
+            .join("\n") + "\n"
+        );
+      }
 
       sourceFileLogger.info(`${endorsements.length} endorsements found`);
     }
