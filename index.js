@@ -20,9 +20,6 @@ import { sourceFilesToUniqueKey } from "./lib/source-file-to-unique-key.js";
 export default async function run(octokit, logger = pino()) {
   const mainLogger = logger.child({ name: "main" });
 
-  const { data } = await octokit
-    .request("GET /user")
-    .catch(() => octokit.request("GET /app"));
   const {
     data: {
       resources: { core, search },
@@ -30,11 +27,10 @@ export default async function run(octokit, logger = pino()) {
   } = await octokit.request("GET /rate_limit");
   mainLogger.info(
     {
-      login: data.html_url,
       searchRateRemaining: search.remaining,
       rateLimitRemaining: core.remaining,
     },
-    `Authenticated`
+    `Current rate limit`
   );
 
   // we use the `.results` directory to store internal data for debugging
