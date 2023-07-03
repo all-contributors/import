@@ -126,10 +126,33 @@ export default async function run(octokit, logger = pino()) {
   for (const sourceFile of Object.values(knownSourceFiles)) {
     const sourceFileLogger = mainLogger.child({
       owner: sourceFile.owner,
-      repo: sourceFile.owner,
+      repo: sourceFile.repo,
       path: sourceFile.path,
       lastCommitSha: sourceFile.lastCommitSha,
     });
+
+    const hasChanges = await octokit
+      .request("HEAD /repos/{owner}/{repo}/contents/{path}", {
+        owner: sourceFile.owner,
+        repo: sourceFile.repo,
+        path: sourceFile.path,
+        headers: {
+          "if-none-match": `"${sourceFile.lastFileSha}"`,
+        },
+      })
+      .then(() => true)
+      .catch((error) => {
+        if (error.status === 304) {
+          return false;
+        }
+
+        throw error;
+      });
+
+    if (!hasChanges) {
+      sourceFileLogger.info(`No changes found`);
+      return;
+    }
 
     const result = await findRepositoryFileEndorsements(
       octokit,
