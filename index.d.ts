@@ -10,7 +10,8 @@ export type SourceFilesColumnKeys = [
   "repo_name",
   "path",
   "last_commit_sha",
-  "last_updated_at"
+  "last_updated_at",
+  "last_file_sha"
 ];
 
 export type SourceFile = {

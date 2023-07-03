@@ -142,23 +142,23 @@ export default async function run(octokit, logger = pino()) {
       continue;
     }
 
-    const { endorsements, lastCommitSha, lastUpdatedAt } = result;
+    const { endorsements, lastCommitSha, lastUpdatedAt, lastFileSha } = result;
+
+    // update source files file with new last commit sha
+    // TODO: check for updates using `lastFileSha` above using a conditional HEAD request, before even calling `findRepositoryFileEndorsements`
+    await writeFile(
+      SOURCE_FILES_PATH,
+      knownSourceFilesData.replace(
+        new RegExp(`${sourceFile.lastCommitSha}.*$`),
+        `${lastCommitSha},${lastUpdatedAt},${lastFileSha}`
+      )
+    );
 
     if (lastCommitSha === sourceFile.lastCommitSha) {
       sourceFileLogger.info(`No changes found`);
 
       continue;
     }
-
-    // update source files file with new last commit sha
-    // TODO: we might need to optimize this if it gets to slow.
-    await writeFile(
-      SOURCE_FILES_PATH,
-      knownSourceFilesData.replace(
-        `${sourceFile.lastCommitSha},${sourceFile.lastUpdatedAt}`,
-        `${lastCommitSha},${lastUpdatedAt}`
-      )
-    );
 
     // add endorsement
     await appendFile(
@@ -243,7 +243,8 @@ export default async function run(octokit, logger = pino()) {
 
       if (!result) continue;
 
-      const { endorsements, lastCommitSha, lastUpdatedAt } = result;
+      const { endorsements, lastCommitSha, lastUpdatedAt, lastFileSha } =
+        result;
 
       await appendFile(
         SOURCE_FILES_PATH,
@@ -255,6 +256,7 @@ export default async function run(octokit, logger = pino()) {
           searchResult.path,
           lastCommitSha,
           lastUpdatedAt,
+          lastFileSha,
         ].join(",") + "\n"
       );
 
