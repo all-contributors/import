@@ -85,26 +85,27 @@ export default async function run(octokit, logger = pino()) {
       };
     }, {});
 
-  const knownEndorsements = new Set(
-    currentEndorsementsData
-      .trim()
-      .split("\n")
-      .slice(1)
-      .map((line) => {
-        const lineObject = ENDORSEMENTS_COLUMNS.reduce((result, column, i) => {
-          result[column] = line.split(",")[i];
-          return result;
-        }, {});
+  const knownEndorsements = new Set();
+  const userIdByLogin = {};
 
-        // @ts-expect-error
-        return endorsementToUniqueKey(lineObject);
-      })
-  );
+  const endorsementLines = currentEndorsementsData.trim().split("\n").slice(1);
+
+  for (const line of endorsementLines) {
+    const lineObject = ENDORSEMENTS_COLUMNS.reduce((result, column, i) => {
+      result[column] = line.split(",")[i];
+      return result;
+    }, {});
+
+    userIdByLogin[lineObject["login"]] = lineObject["user_id"];
+
+    // @ts-expect-error
+    knownEndorsements.add(endorsementToUniqueKey(lineObject));
+  }
 
   /** @type {import("./index.js").State} */
   const state = {
     userIdByLogin: {},
-    numEndorsements: 0,
+    numEndorsements: endorsementLines.length,
     knownSourceFiles,
     knownEndorsements,
   };
