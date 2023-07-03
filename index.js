@@ -110,6 +110,8 @@ export default async function run(octokit, logger = pino()) {
     knownEndorsements,
   };
 
+  let seq = endorsementLines.length;
+
   const numKnownSourceFiles = Object.keys(knownSourceFiles).length;
   if (numKnownSourceFiles > 0) {
     mainLogger.info(
@@ -185,7 +187,6 @@ export default async function run(octokit, logger = pino()) {
 
   let numTotalSearchResults;
   let numSearchResults = 0;
-  let seq = 0;
   for await (const response of searchIterator) {
     if (!numTotalSearchResults) {
       numTotalSearchResults = response.data.total_count;
