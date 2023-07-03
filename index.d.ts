@@ -22,6 +22,7 @@ export type SourceFile = {
   path: string;
   lastCommitSha?: string;
   lastUpdatedAt?: string;
+  lastFileSha?: string;
 };
 
 export type DatabaseColumnKeys = [

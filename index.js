@@ -39,7 +39,7 @@ export default async function run(octokit, logger = pino()) {
   await rm(".results", { recursive: true, force: true });
   await mkdir(".results", { recursive: true });
 
-  const knownSourceFilesData = await readFile(SOURCE_FILES_PATH, "utf8").catch(
+  let knownSourceFilesData = await readFile(SOURCE_FILES_PATH, "utf8").catch(
     () => ""
   );
   const currentEndorsementsData = await readFile(
@@ -144,15 +144,13 @@ export default async function run(octokit, logger = pino()) {
 
     const { endorsements, lastCommitSha, lastUpdatedAt, lastFileSha } = result;
 
+    const uniqueMatchString = `${sourceFile.repoId},${sourceFile.repo},${sourceFile.path},${sourceFile.lastCommitSha}`;
     // update source files file with new last commit sha
-    // TODO: check for updates using `lastFileSha` above using a conditional HEAD request, before even calling `findRepositoryFileEndorsements`
-    await writeFile(
-      SOURCE_FILES_PATH,
-      knownSourceFilesData.replace(
-        new RegExp(`${sourceFile.lastCommitSha}.*$`),
-        `${lastCommitSha},${lastUpdatedAt},${lastFileSha}`
-      )
+    knownSourceFilesData = knownSourceFilesData.replace(
+      new RegExp(`${uniqueMatchString}.*$`),
+      `${uniqueMatchString},${lastUpdatedAt},${lastFileSha}`
     );
+    await writeFile(SOURCE_FILES_PATH, knownSourceFilesData);
 
     if (lastCommitSha === sourceFile.lastCommitSha) {
       sourceFileLogger.info(`No changes found`);
