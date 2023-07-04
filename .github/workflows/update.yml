@@ -32,5 +32,5 @@ jobs:
           body: >
             I found new endorsements and thought I'd let you know about it 👋🤖
           branch: update
-          author: '"all-contributors-import[bot]" <138532524+all-contributors-import[bot]@users.noreply.github.com>'
+          author: "all-contributors-import[bot] <138532524+all-contributors-import[bot]@users.noreply.github.com>"
           commit-message: "data: update"
