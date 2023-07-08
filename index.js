@@ -162,7 +162,7 @@ export default async function run(octokit, logger = pino()) {
         ""
       );
       sourceFileLogger.info(`Source file no longer exists, removing`);
-      return;
+      continue;
     }
 
     const {
