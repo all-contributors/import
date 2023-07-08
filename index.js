@@ -161,6 +161,7 @@ export default async function run(octokit, logger = pino()) {
         new RegExp(`.*${uniqueLineMatchString}.*\\n`, "gm"),
         ""
       );
+      await writeFile(SOURCE_FILES_PATH, knownSourceFilesData);
       sourceFileLogger.info(`Source file no longer exists, removing`);
       continue;
     }
