@@ -1,6 +1,7 @@
 // @ts-check
 
-import { writeFile, mkdir, rm, appendFile, readFile } from "node:fs/promises";
+import { EOL } from "node:os";
+import { appendFile, writeFile, mkdir, rm, readFile } from "node:fs/promises";
 
 import pino from "pino";
 
@@ -110,6 +111,7 @@ export default async function run(octokit, logger = pino()) {
   };
 
   let seq = endorsementLines.length;
+  const startSeq = seq + 1;
 
   const numKnownSourceFiles = Object.keys(knownSourceFiles).length;
   if (numKnownSourceFiles > 0) {
@@ -338,5 +340,18 @@ export default async function run(octokit, logger = pino()) {
     }
   }
 
-  mainLogger.info("done");
+  if (seq < startSeq) {
+    mainLogger.info("No new changes");
+    return;
+  }
+
+  // set outputs
+  await appendFile(String(process.env.GITHUB_OUTPUT), `hasUpdate=1${EOL}`);
+  await appendFile(
+    String(process.env.GITHUB_OUTPUT),
+    `startSeq=${startSeq}${EOL}`
+  );
+  await appendFile(String(process.env.GITHUB_OUTPUT), `endSeq=${seq}${EOL}`);
+
+  mainLogger.info({ startSeq, endSeq: seq }, "done");
 }
