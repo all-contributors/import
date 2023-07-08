@@ -132,6 +132,8 @@ export default async function run(octokit, logger = pino()) {
       lastFileSha: sourceFile.lastFileSha,
     });
 
+    const uniqueLineMatchString = `${sourceFile.repoId},${sourceFile.repo},${sourceFile.path},${sourceFile.lastCommitSha}`;
+
     // unfortunately HEAD requests don't seem to support conditional requests
     // see https://docs.github.com/en/rest/overview/resources-in-the-rest-api#conditional-requests
     // Otherwise we could add this header and check for a 304 response
@@ -139,13 +141,33 @@ export default async function run(octokit, logger = pino()) {
     //     headers: {
     //       "If-None-Match": `"${sourceFile.lastFileSha}"`,
     //     },
+    const checkResponse = await octokit
+      .request("HEAD /repos/{owner}/{repo}/contents/{path}", {
+        owner: sourceFile.owner,
+        repo: sourceFile.repo,
+        path: sourceFile.path,
+      })
+      .catch((error) => {
+        if (error.status === 404) {
+          return;
+        }
+
+        throw error;
+      });
+
+    if (!checkResponse) {
+      // remove current line from source files
+      knownSourceFilesData = knownSourceFilesData.replace(
+        new RegExp(`.*${uniqueLineMatchString}.*\\n`, "gm"),
+        ""
+      );
+      sourceFileLogger.info(`Source file no longer exists, removing`);
+      return;
+    }
+
     const {
       headers: { etag },
-    } = await octokit.request("HEAD /repos/{owner}/{repo}/contents/{path}", {
-      owner: sourceFile.owner,
-      repo: sourceFile.repo,
-      path: sourceFile.path,
-    });
+    } = checkResponse;
 
     const hasChanges =
       // `headers.etag` usually looks like this: W/"8f39bae6a3b630823ddee0476c82463015e93232"
@@ -170,13 +192,12 @@ export default async function run(octokit, logger = pino()) {
 
     const { endorsements, lastCommitSha, lastUpdatedAt, lastFileSha } = result;
 
-    const uniqueMatchString = `${sourceFile.repoId},${sourceFile.repo},${sourceFile.path},${sourceFile.lastCommitSha}`;
-    const regex = new RegExp(`${uniqueMatchString}[^\\n]+`);
+    const updateFileShaRegex = new RegExp(`${uniqueLineMatchString}[^\\n]+`);
 
     // update source files file with new last commit sha
     knownSourceFilesData = knownSourceFilesData.replace(
-      regex,
-      `${uniqueMatchString},${lastUpdatedAt},${lastFileSha}`
+      updateFileShaRegex,
+      `${uniqueLineMatchString},${lastUpdatedAt},${lastFileSha}`
     );
     await writeFile(SOURCE_FILES_PATH, knownSourceFilesData);
 
