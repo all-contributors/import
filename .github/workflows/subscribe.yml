@@ -1,0 +1,26 @@
+name: Subscribe
+"on":
+  repository_dispatch:
+    types:
+      - "all-contributors-import:update"
+
+jobs:
+  subscribe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gr2m/github-app-token-action@v1
+        id: app-token
+        with:
+          app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
+          private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
+      - uses: octokit/request-action@v2
+        with:
+          route: "POST /repos/{repository}/issues"
+          repository: ${{ github.repository }}
+          title: "🤖📯 New update available"
+          body: |
+            Start seq: ${{ github.event.client_payload.startSeq }}
+            End seq: ${{ github.event.client_payload.endSeq }}
+
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
