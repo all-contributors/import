@@ -6,6 +6,16 @@ The script creates or updates [data/endorsements.csv](data/endorsements.csv) (re
 
 ## Usage
 
+### Subscribe to updates
+
+In order to be notified about updates, install the [all-contributors-import](https://github.com/apps/all-contributors-import) app on a repository where you want to handle the update.
+
+To see an example of how to handle the update, see [.github/workflows/subscribe.yml](.github/workflows/subscribe.yml).
+
+We only pass the `startSeq` and `endSeq` as part of the update because repository dispatch payloads are limited in size. But you can download the latest version of `data/endorsements.csv` at https://raw.githubusercontent.com/gr2m/all-contributors-import/main/data/endorsements.csv and then filter out based on the provided sequence numbers.
+
+### CLI
+
 In order to run the import script, you need to define a `GITHUB_TOKEN` environment variable to a personal access token with the `public_repo` scope ([create one](https://github.com/settings/tokens/new?scopes=public_repo&description=all-contributors-import-script)).
 
 ```

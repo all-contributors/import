@@ -1,5 +1,5 @@
 import { Endpoints } from "@octokit/types";
-import { Octokit } from "@octokit/core";
+import { Octokit } from "octokit";
 
 export default function main(octokit: Octokit): Promise<void>;
 

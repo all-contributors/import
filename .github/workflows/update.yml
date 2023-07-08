@@ -21,6 +21,7 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: node bin/cli.js
+        id: update
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - uses: stefanzweifel/git-auto-commit-action@v4
@@ -30,3 +31,10 @@ jobs:
           commit_author: "all-contributors-import[bot] <138532524+all-contributors-import[bot]@users.noreply.github.com>"
           commit_message: "data: update"
           file_pattern: "data/*.csv"
+      - if: steps.update.outputs.hasUpdate
+        run: node scripts/notify.js
+        env:
+          GITHUB_APP_ID: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
+          GITHUB_APP_PRIVATE_KEY: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
+          START_SEQ: ${{ steps.update.outputs.startSeq }}
+          END_SEQ: ${{ steps.update.outputs.endSeq }}
