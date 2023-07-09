@@ -13,15 +13,39 @@ jobs:
         with:
           app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
           private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
-      - uses: octokit/request-action@v2.x
-        with:
-          route: "POST /repos/{repository}/issues"
-          repository: ${{ github.repository }}
-          title: "🤖📯 New update available"
-          body: |
-            |
-              Start seq: ${{ github.event.client_payload.startSeq }}
-              End seq: ${{ github.event.client_payload.endSeq }}
-
+      - uses: actions/github-script@v6
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          START_SEQ: ${{ github.event.client_payload.startSeq }}
+          END_SEQ: ${{ github.event.client_payload.endSeq }}
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            // download the latest version of endorsements.csv
+            const response = await fetch(
+              "https://raw.githubusercontent.com/gr2m/all-contributors-import/main/data/endorsements.csv"
+            );
+            const text = await response.text();
+
+            // find all new endorsements
+            const [firstLine, ...lines] = text.split("\n");
+            const newLines = lines.filter((line) => {
+              const [seq] = line.split(",");
+              return Number(seq) >= process.env.START_SEQ;
+            });
+
+            // create a markdown table
+            const headers = firstLine.split(",");
+            const table = `|${headers.join("|")}|
+            |${headers.map(() => "-").join("|")}|
+            ${newLines.map((line) => `|${line.split(",").join("|")}|`).join("\n")}
+            `;
+
+            // create a new issue
+            github.request("POST /repos/{repository}/issues", {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🤖📯 ${
+                process.env.END_SEQ - process.env.START_SEQ
+              } new endorsements have been added`,
+              body: table,
+            });
