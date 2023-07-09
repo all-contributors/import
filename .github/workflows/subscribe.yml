@@ -19,8 +19,9 @@ jobs:
           repository: ${{ github.repository }}
           title: "🤖📯 New update available"
           body: |
-            Start seq: ${{ github.event.client_payload.startSeq }}
-            End seq: ${{ github.event.client_payload.endSeq }}
+            |
+              Start seq: ${{ github.event.client_payload.startSeq }}
+              End seq: ${{ github.event.client_payload.endSeq }}
 
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
