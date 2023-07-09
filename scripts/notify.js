@@ -1,7 +1,7 @@
-const { inspect } = require("util");
+import { inspect } from "util";
 
-const core = require("@actions/core");
-const { App } = require("octokit");
+import core from "@actions/core";
+import { App } from "octokit";
 
 main();
 
