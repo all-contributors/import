@@ -13,7 +13,7 @@ jobs:
         with:
           app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
           private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
-      - uses: octokit/request-action@v2
+      - uses: octokit/request-action@v2.x
         with:
           route: "POST /repos/{repository}/issues"
           repository: ${{ github.repository }}
