@@ -21,7 +21,7 @@
     "@actions/core": "^1.10.0",
     "pino-pretty": "^10.0.0"
   },
-  "repository": "github:all-contributors/import-script",
+  "repository": "github:all-contributors/import",
   "scripts": {
     "import": "node ./import.js | pino-pretty"
   },
