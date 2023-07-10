@@ -12,7 +12,7 @@ In order to be notified about updates, install the [all-contributors-import](htt
 
 To see an example of how to handle the update, see [.github/workflows/subscribe.yml](.github/workflows/subscribe.yml).
 
-We only pass the `startSeq` and `endSeq` as part of the update because repository dispatch payloads are limited in size. But you can download the latest version of `data/endorsements.csv` at https://raw.githubusercontent.com/gr2m/all-contributors-import/main/data/endorsements.csv and then filter out based on the provided sequence numbers.
+We only pass the `startSeq` and `endSeq` as part of the update because repository dispatch payloads are limited in size. But you can download the latest version of `data/endorsements.csv` at https://raw.githubusercontent.com/all-contributors/import/main/data/endorsements.csv and then filter out based on the provided sequence numbers.
 
 ### CLI
 
