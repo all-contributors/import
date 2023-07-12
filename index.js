@@ -154,6 +154,14 @@ export default async function run(octokit, logger = pino()) {
           return;
         }
 
+        // https://github.com/all-contributors/import/issues/25
+        if (error.status === 403 && error.request.request.retryCount === 1) {
+          sourceFileLogger.warn(
+            `403 error that is not rate limiting. See https://github.com/all-contributors/import/issues/25. Ignoring.`
+          );
+          return;
+        }
+
         throw error;
       });
 
