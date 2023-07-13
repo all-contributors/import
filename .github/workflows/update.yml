@@ -35,8 +35,8 @@ jobs:
       - if: steps.update.outputs.hasUpdate
         uses: actions/upload-artifact@v2
         with:
-          name: data/endorsements.csv
-          path: ${{ github.event_path }}
+          name: endorsements.csv
+          path: data/endorsements.csv
       # test integratity of data
       - if: steps.update.outputs.hasUpdate
         run: npm run test
