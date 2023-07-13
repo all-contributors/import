@@ -23,7 +23,8 @@
   },
   "repository": "github:all-contributors/import",
   "scripts": {
-    "import": "node ./import.js | pino-pretty"
+    "import": "node ./import.js | pino-pretty",
+    "test": "node test.js"
   },
   "release": {
     "branches": [
