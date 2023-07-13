@@ -31,6 +31,16 @@ jobs:
           commit_author: "all-contributors-import[bot] <138532524+all-contributors-import[bot]@users.noreply.github.com>"
           commit_message: "data: update"
           file_pattern: "data/*.csv"
+      # upload endorsements.csv as artifact
+      - if: steps.update.outputs.hasUpdate
+        uses: actions/upload-artifact@v2
+        with:
+          name: data/endorsements.csv
+          path: ${{ github.event_path }}
+      # test integratity of data
+      - if: steps.update.outputs.hasUpdate
+        run: npm run test
+      # push data back to main
       - if: steps.update.outputs.hasUpdate
         run: node scripts/notify.js
         env:
