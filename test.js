@@ -14,6 +14,7 @@ let seq = 0;
 const newLines = [];
 const errors = [];
 let hasSeqError = false;
+let lastSeq;
 
 for await (const line of rl) {
   const columns = line.split(",");
@@ -25,6 +26,13 @@ for await (const line of rl) {
     newLines.push(line);
     continue;
   }
+
+  if (!line.trim()) {
+    errors.push(`Wrong number of columns after seq #${lastSeq}`);
+    continue;
+  }
+
+  lastSeq = seq;
 
   if (columns.length !== ENDORSEMENTS_COLUMNS.length) {
     errors.push(`Wrong number of columns at seq #${endorsement.seq}`);
