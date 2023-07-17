@@ -318,33 +318,34 @@ export default async function run(octokit, logger = pino()) {
         ].join(",") + "\n"
       );
 
-      // TODO: before adding new endorsements, check if they already exist
+      const uniqueEndorsements = endorsements
+        .map((endorsement) => {
+          const key = endorsementToUniqueKey(endorsement);
 
-      if (endorsements.length > 0) {
+          if (state.knownEndorsements.has(key)) {
+            sourceFileLogger.info(`Skipping known endorsement`, { key });
+            return;
+          }
+
+          return [
+            ++seq,
+            ...ENDORSEMENTS_COLUMNS.slice(1).map(
+              (column) => endorsement[column]
+            ),
+          ].join(",");
+        })
+        .filter(Boolean);
+
+      if (uniqueEndorsements.length > 0) {
         await appendFile(
           ENDORSEMENTS_PATH,
-          endorsements
-            .map((endorsement) => {
-              const key = endorsementToUniqueKey(endorsement);
-
-              if (state.knownEndorsements.has(key)) {
-                sourceFileLogger.info(`Skipping known endorsement`, { key });
-                return;
-              }
-
-              return [
-                ++seq,
-                ...ENDORSEMENTS_COLUMNS.slice(1).map(
-                  (column) => endorsement[column]
-                ),
-              ].join(",");
-            })
-            .filter(Boolean)
-            .join("\n") + "\n"
+          uniqueEndorsements.join("\n") + "\n"
         );
       }
 
-      sourceFileLogger.info(`${endorsements.length} endorsements found`);
+      sourceFileLogger.info(
+        `${endorsements.length} endorsements (${uniqueEndorsements} new) found`
+      );
     }
   }
 
