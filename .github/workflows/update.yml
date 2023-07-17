@@ -24,13 +24,6 @@ jobs:
         id: update
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_user_name: "all-contributors-import[bot]"
-          commit_user_email: "138532524+all-contributors-import[bot]@users.noreply.github.com"
-          commit_author: "all-contributors-import[bot] <138532524+all-contributors-import[bot]@users.noreply.github.com>"
-          commit_message: "data: update"
-          file_pattern: "data/*.csv"
       # upload endorsements.csv as artifact
       - if: steps.update.outputs.hasUpdate
         uses: actions/upload-artifact@v2
@@ -40,6 +33,14 @@ jobs:
       # test integratity of data
       - if: steps.update.outputs.hasUpdate
         run: npm run test
+      # commit back to main branch
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: "all-contributors-import[bot]"
+          commit_user_email: "138532524+all-contributors-import[bot]@users.noreply.github.com"
+          commit_author: "all-contributors-import[bot] <138532524+all-contributors-import[bot]@users.noreply.github.com>"
+          commit_message: "data: update"
+          file_pattern: "data/*.csv"
       # push data back to main
       - if: steps.update.outputs.hasUpdate
         run: node scripts/notify.js
