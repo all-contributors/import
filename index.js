@@ -14,6 +14,7 @@ import {
 } from "./lib/constants.js";
 import { endorsementToUniqueKey } from "./lib/endorsement-to-unique-key.js";
 import { sourceFilesToUniqueKey } from "./lib/source-file-to-unique-key.js";
+import { MAX_RETRY_COUNT } from "./lib/octokit.js";
 
 /**
  * @param {InstanceType<typeof import('./lib/octokit.js').default>} octokit
@@ -155,7 +156,10 @@ export default async function run(octokit, logger = pino()) {
         }
 
         // https://github.com/all-contributors/import/issues/25
-        if (error.status === 403 && error.request.request.retryCount === 1) {
+        if (
+          error.status === 403 &&
+          error.request.request.retryCount !== MAX_RETRY_COUNT
+        ) {
           sourceFileLogger.warn(
             `403 error that is not rate limiting. See https://github.com/all-contributors/import/issues/25. Ignoring.`
           );
