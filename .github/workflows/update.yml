@@ -31,7 +31,8 @@ jobs:
           name: endorsements.csv
           path: data/endorsements.csv
   handleUpdate:
-    if: jobs.update.outputs.hasUpdate
+    needs: update
+    if: ${{ needs.update.outputs.hasUpdate == 'true' }}
     runs-on: ubuntu-latest
     steps:
       # upload endorsements.csv as artifact
