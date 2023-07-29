@@ -12,8 +12,6 @@ jobs:
       endSeq: ${{ steps.update.outputs.endSeq }}
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: ${{ steps.app-token.outputs.token }}
       - uses: actions/setup-node@v3
         with:
           cache: npm
@@ -35,6 +33,13 @@ jobs:
     if: ${{ needs.update.outputs.hasUpdate == 'true' }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: 18
       # upload endorsements.csv as artifact
       - uses: actions/download-artifact@v2
         with:
