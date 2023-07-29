@@ -22,15 +22,19 @@ jobs:
         env:
           GITHUB_APP_ID: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
           GITHUB_PRIVATE_KEY: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
-      # upload endorsements.csv as artifact
       - if: steps.update.outputs.hasUpdate
         uses: actions/upload-artifact@v2
         with:
           name: endorsements.csv
           path: data/endorsements.csv
+      - if: steps.update.outputs.hasUpdate
+        uses: actions/upload-artifact@v2
+        with:
+          name: source-files.csv
+          path: data/source-files.csv
   handleUpdate:
     needs: update
-    if: ${{ needs.update.outputs.hasUpdate == 'true' }}
+    if: ${{ needs.update.outputs.hasUpdate }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -40,11 +44,14 @@ jobs:
         with:
           cache: npm
           node-version: 18
-      # upload endorsements.csv as artifact
       - uses: actions/download-artifact@v2
         with:
           name: endorsements.csv
           path: data/endorsements.csv
+      - uses: actions/download-artifact@v2
+        with:
+          name: source-files.csv
+          path: data/source-files.csv
       - uses: gr2m/github-app-token-action@v1
         id: app-token
         with:
