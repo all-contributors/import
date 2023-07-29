@@ -17,10 +17,12 @@ import { sourceFilesToUniqueKey } from "./lib/source-file-to-unique-key.js";
 import { MAX_RETRY_COUNT } from "./lib/octokit.js";
 
 /**
- * @param {InstanceType<typeof import('./lib/octokit.js').default>} octokit
+ * @param {InstanceType<typeof import('./lib/octokit.js').default>} app
  */
-export default async function run(octokit, logger = pino()) {
+export default async function run(app, logger = pino()) {
   const mainLogger = logger.child({ name: "main" });
+
+  const octokit = await app.getInstallationOctokit(39496318);
 
   const {
     data: {

@@ -3,13 +3,14 @@
 process.exitCode = 1;
 
 import run from "../index.js";
-import Octokit from "../lib/octokit.js";
+import App from "../lib/octokit.js";
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+const app = new App({
+  appId: process.env.GITHUB_APP_ID,
+  privateKey: process.env.GITHUB_PRIVATE_KEY,
 });
 
-run(octokit).then(
+run(app).then(
   () => {
     process.exitCode = 0;
   },
