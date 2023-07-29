@@ -6,12 +6,11 @@ name: Update
 jobs:
   update:
     runs-on: ubuntu-latest
+    outputs:
+      hasUpdate: ${{ steps.update.outputs.hasUpdate }}
+      startSeq: ${{ steps.update.outputs.startSeq }}
+      endSeq: ${{ steps.update.outputs.endSeq }}
     steps:
-      - uses: gr2m/github-app-token-action@v1
-        id: app-token
-        with:
-          app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
-          private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
       - uses: actions/checkout@v3
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -23,16 +22,30 @@ jobs:
       - run: node bin/cli.js
         id: update
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITHUB_APP_ID: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
+          GITHUB_PRIVATE_KEY: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
       # upload endorsements.csv as artifact
       - if: steps.update.outputs.hasUpdate
         uses: actions/upload-artifact@v2
         with:
           name: endorsements.csv
           path: data/endorsements.csv
+  handleUpdate:
+    if: jobs.update.outputs.hasUpdate
+    runs-on: ubuntu-latest
+    steps:
+      # upload endorsements.csv as artifact
+      - uses: actions/download-artifact@v2
+        with:
+          name: endorsements.csv
+          path: data/endorsements.csv
+      - uses: gr2m/github-app-token-action@v1
+        id: app-token
+        with:
+          app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
+          private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
       # test integratity of data
-      - if: steps.update.outputs.hasUpdate
-        run: npm run test
+      - run: npm run test
       # commit back to main branch
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -42,8 +55,7 @@ jobs:
           commit_message: "data: update"
           file_pattern: "data/*.csv"
       # push data back to main
-      - if: steps.update.outputs.hasUpdate
-        run: node scripts/notify.js
+      - run: node scripts/notify.js
         env:
           GITHUB_APP_ID: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
           GITHUB_APP_PRIVATE_KEY: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
