@@ -37,6 +37,11 @@ jobs:
     if: ${{ needs.update.outputs.hasUpdate }}
     runs-on: ubuntu-latest
     steps:
+      - uses: gr2m/github-app-token-action@v1
+        id: app-token
+        with:
+          app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
+          private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
       - uses: actions/checkout@v3
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -52,11 +57,6 @@ jobs:
         with:
           name: source-files.csv
           path: data/source-files.csv
-      - uses: gr2m/github-app-token-action@v1
-        id: app-token
-        with:
-          app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
-          private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
       # test integratity of data
       - run: npm run test
       # commit back to main branch
