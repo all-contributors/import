@@ -30,4 +30,5 @@ jobs:
         with:
           path: data
       - run: ls data
+      - run: head data/source-files.csv
       - run: npm run test
