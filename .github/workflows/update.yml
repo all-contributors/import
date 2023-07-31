@@ -49,6 +49,7 @@ jobs:
         with:
           cache: npm
           node-version: 18
+      - run: rm data/*
       - uses: actions/download-artifact@v2
         with:
           name: endorsements.csv
