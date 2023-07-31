@@ -28,6 +28,7 @@ jobs:
       - run: rm data/*
       - uses: actions/download-artifact@v2
         with:
+          name: data
           path: data
       - run: ls -R data
       - run: head data/source-files.csv
