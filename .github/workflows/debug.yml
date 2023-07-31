@@ -1,0 +1,20 @@
+name: Debug
+"on":
+  workflow_dispatch: {}
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gr2m/github-app-token-action@v1
+        id: app-token
+        with:
+          app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
+          private_key: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: 18
+      - run: npm run test
