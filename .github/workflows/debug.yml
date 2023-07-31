@@ -17,13 +17,11 @@ jobs:
         with:
           cache: npm
           node-version: 18
-      - if: steps.update.outputs.hasUpdate
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: endorsements.csv
           path: data/endorsements.csv
-      - if: steps.update.outputs.hasUpdate
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: source-files.csv
           path: data/source-files.csv
