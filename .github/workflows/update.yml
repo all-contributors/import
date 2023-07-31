@@ -53,11 +53,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: endorsements.csv
-          path: data/endorsements.csv
+          path: data
       - uses: actions/download-artifact@v2
         with:
           name: source-files.csv
-          path: data/source-files.csv
+          path: data
       # test integratity of data
       - run: npm run test
       # commit back to main branch
