@@ -29,6 +29,6 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           path: data
-      - run: ls data
+      - run: ls -R data
       - run: head data/source-files.csv
       - run: npm run test
