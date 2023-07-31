@@ -28,7 +28,11 @@ jobs:
       - run: rm data/*
       - uses: actions/download-artifact@v2
         with:
-          name: data
+          name: endorsements.csv
+          path: data
+      - uses: actions/download-artifact@v2
+        with:
+          name: source-files.csv
           path: data
       - run: ls -R data
       - run: head data/source-files.csv
