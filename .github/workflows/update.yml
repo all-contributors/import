@@ -74,5 +74,5 @@ jobs:
         env:
           GITHUB_APP_ID: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
           GITHUB_APP_PRIVATE_KEY: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
-          START_SEQ: ${{ steps.update.outputs.startSeq }}
-          END_SEQ: ${{ steps.update.outputs.endSeq }}
+          START_SEQ: ${{ needs.update.outputs.startSeq }}
+          END_SEQ: ${{ needs.update.outputs.endSeq }}
