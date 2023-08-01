@@ -188,7 +188,6 @@ export default async function run(app, logger = pino()) {
 
     const hasChanges =
       // `headers.etag` usually looks like this: W/"8f39bae6a3b630823ddee0476c82463015e93232"
-      // @ts-expect-error - `etag` is always set for this endpoint
       etag.replace(/(^(\w\/)?"|"$)/g, "") !== sourceFile.lastFileSha;
 
     if (!hasChanges) {
@@ -208,6 +207,10 @@ export default async function run(app, logger = pino()) {
     }
 
     const { endorsements, lastCommitSha, lastUpdatedAt, lastFileSha } = result;
+
+    if (endorsements.length === 0) {
+      continue;
+    }
 
     const updateFileShaRegex = new RegExp(`${uniqueLineMatchString}[^\\n]+`);
 
