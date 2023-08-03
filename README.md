@@ -54,6 +54,12 @@ This repository consists of
 
 The [scripts/notify.js](scripts/notify.js) script is [called as part of the daily update workflow](https://github.com/all-contributors/import/blob/4999950a419c25072f5c94aba7dc91ac9ba74fb9/.github/workflows/update.yml#L34-L40). The script is called with the credentials of the [all-contributors-import](https://github.com/apps/all-contributors-import) app. The script iterates through all repositories the app is installed in and creates a repository dispatch event with `event_type` set to `all-contributors-import:update` and `client_payload` set to `{ startSeq, endSeq }`
 
+## Sponsors
+
+[![OpenSauced logo](https://github.com/open-sauced/assets/blob/main/logos/logo-on-dark.png)](https://opensauced.pizza?utm_source=allcontributorss&utm_medium=github&utm_campaign=sponsorship)
+
+[OpenSauced](https://opensauced.pizza?utm_source=allcontributorss&utm_medium=github&utm_campaign=sponsorship) provides insights into open source projects by using data science in git commits. 
+
 ## License
 
 [ISC](LICENSE)
