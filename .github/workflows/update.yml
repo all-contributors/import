@@ -23,12 +23,12 @@ jobs:
           GITHUB_APP_ID: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
           GITHUB_PRIVATE_KEY: ${{ secrets.ALL_CONTRIBUTORS_IMPORT_APP_PRIVATE_KEY }}
       - if: steps.update.outputs.hasUpdate
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: endorsements.csv
           path: data/endorsements.csv
       - if: steps.update.outputs.hasUpdate
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: source-files.csv
           path: data/source-files.csv
