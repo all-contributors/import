@@ -41,7 +41,7 @@ jobs:
             `;
 
             // create a new issue
-            github.request("POST /repos/{repository}/issues", {
+            github.request("POST /repos/{owner}/{repo}/issues", {
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `🤖📯 ${
