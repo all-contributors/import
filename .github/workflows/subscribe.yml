@@ -12,7 +12,7 @@ jobs:
         with:
           name: event.json
           path: ${{ github.event_path }}
-      - uses: gr2m/github-app-token-action@v1
+      - uses: actions/create-github-app-token@v1
         id: app-token
         with:
           app_id: ${{ vars.ALL_CONTRIBUTORS_IMPORT_APP_ID }}
