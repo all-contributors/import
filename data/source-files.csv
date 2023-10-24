@@ -9,7 +9,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 54718400,tinacms,198488459,tinacms,.all-contributorsrc,aecf6f3b1d8673bdc193d72be56c021621a905c0,2022-10-07T18:54:24Z,0f3b71b9c17c427d65166e897bf5a0d89780a30f
 61363248,cpeditor,221268096,cpeditor,.all-contributorsrc,6722c603a322a581b5886a9ea4a2a7e67c2cb786,2023-08-15T09:41:43Z,7749676a8221c58916dd2b365dcedee596f365df
 60120589,caliwyr,580849060,Software,.all-contributorsrc.json,ea88d9eae2a4d5219ada5710125dcd72da4ac84d,2022-12-21T17:10:50Z,81bbddb1c91677c7f4105f8a7b607bec63ac42d0
-99494700,activepieces,573661753,activepieces,.all-contributorsrc,eeb2950f748a6984494b73b53402b4df5c4a169c,2023-10-19T09:23:18Z,b61bb67bb51cde181b248e95b4c7dab34107d747
+99494700,activepieces,573661753,activepieces,.all-contributorsrc,eeb2950f748a6984494b73b53402b4df5c4a169c,2023-10-23T20:25:53Z,5b89367ce0ba8ad32cf24a518909c73aecab580d
 9144571,chl03ks,302802392,react-fundamentals,.all-contributorsrc,ef6ab6c627dd76e5756b977039dc30205da7cb33,2020-10-06T14:49:55Z,0600be6d9a2a40e81ef4e437422838cb95221df6
 73909021,automuteus,295776544,amonguscapture,.all-contributorsrc,66c40283fce6fa273d6b8bbb094eb3e4bc5cc9e5,2023-01-17T16:35:59Z,f1fe0b29249ba2b91effe917189c618e47ff541f
 14932877,Isaac-Tait,450313632,redwood-framework-contrib,tasks/all-contributors/.rwjs.com.all-contributorsrc,a250ef58073148643d9d62a9a7dd323dd2d4627c,2022-01-21T01:46:23Z,779d103d5b80425faecf5f92bf7fc516b9641109
@@ -88,7 +88,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 23307811,saadpasta,218282453,developerFolio,.all-contributorsrc,27b12fd003a9d9dadbc1ff5197c487b06da823b7,2023-02-27T17:57:54Z,ea7d8c09b6db273ad52e271298c1ce31598da818
 27956258,PHPJasper,46984485,phpjasper,.all-contributorsrc,af73664e436b69cfce1ec7b570729d7576fb0764,2020-05-09T02:59:25Z,4c9abaa79620bcd5cc0e593e6b1ea30650262eac
 60074102,jbangdev,230011262,jbang,.all-contributorsrc,18363823ff6adfa312a11693aab27bee929aa2e1,2023-09-13T14:37:06Z,089f87ce4660ea7a11a9e447b3523a6ce47ed90a
-96443982,analogjs,511199000,analog,.all-contributorsrc,d955d420f3a29ebe59602f25cb55fe75a0f17c72,2023-10-22T02:17:59Z,4bc2e8393b74f5c9496bf8959ac2fa008a78c42c
+96443982,analogjs,511199000,analog,.all-contributorsrc,d955d420f3a29ebe59602f25cb55fe75a0f17c72,2023-10-24T04:02:42Z,35277048321a05c07c937941de01e61a3b476cdd
 18017067,peggyrayzis,78658602,react-native-create-bridge,.all-contributorsrc,908c49f4250f05c83da947e18a8da7d58c790cf0,2018-01-21T19:39:27Z,db3b612ac316462be54d80352438b7d3306c591c
 24541365,stevenpersia,165697141,tinder-react-native,.all-contributorsrc,7ea8c6ef35680783c181234b77af55d39606d0c8,2019-08-25T15:06:52Z,fe87d6103083543da23a1d9fe29d18fdfac54017
 29649088,aayuvraj,352471564,masterPortfolio,.all-contributorsrc,d3ae0ddd59643fa61011dedf0d72f973374a6c1e,2021-03-29T00:26:19Z,374a860b1ac86f8741c849d468b6988d5519daa4
@@ -142,7 +142,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 36938499,mayigrin,297015841,movieFindr,.all-contributorsrc,3d55b69695d6e09fe91db9b2deacb99e4d18d501,2019-08-25T15:05:47Z,fe87d6103083543da23a1d9fe29d18fdfac54017
 13099178,vlasy,342024916,tinder-salat,.all-contributorsrc,3d55b69695d6e09fe91db9b2deacb99e4d18d501,2019-08-25T15:05:47Z,fe87d6103083543da23a1d9fe29d18fdfac54017
 1136800,h5bp,3402537,Front-end-Developer-Interview-Questions,.all-contributorsrc,d3865168321d9432d4d7c931561056f40439643c,2019-07-25T00:19:49Z,1437b296afa578d2e041fbe36a417d168e106a50
-8083459,ryanoasis,27574418,nerd-fonts,.all-contributorsrc,7039b474caa7e4346dcafff50c8f68ff2be9699d,2023-10-17T13:23:47Z,e15a9e389ae6e97a8ca6029d88ec4cde3b5935c5
+8083459,ryanoasis,27574418,nerd-fonts,.all-contributorsrc,7039b474caa7e4346dcafff50c8f68ff2be9699d,2023-10-23T13:33:55Z,82bbb907eeae03f88fc35f010624bc1e8cc4ecbd
 1301335,fernandopasik,134985658,lit-redux-router,.all-contributorsrc.json,be6edac6848e61c15d242da892b0837d8aef7229,2021-09-18T10:01:46Z,0eb9826c77e4a6ddef64cb9b75c221a74459e954
 12959162,snyk,297622945,driftctl,.all-contributorsrc,9298dc3707e935c4b30c79cf8c9e92d54fe225bb,2023-02-07T09:06:12Z,15cddfd4f98dc088be14cacaffa752d4ec3300af
 6043781,sam-hosseini,223818237,freelancing-in-finland,.all-contributorsrc,dd90e0d98dddc055664bd1990b7ae4575dbc808c,2023-07-16T08:06:32Z,1912a22ee78f132cb59b12cc1c9bb3019eb3de7a
@@ -634,7 +634,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 113935787,webaverse-studios,589626771,webaverse,.all-contributorsrc,ff59a4e3fc47021a745581adbd94ea9d92b3b390,2023-01-17T05:44:52Z,469c0e46ab557e44ba78d993c018a04566ff2d59
 18213512,ioanniswd,268252113,pot,.all-contributorsrc,33793e3800f4f5db4d0e930c2ccdf10380857231,2020-09-23T07:50:16Z,3570ffbfff7ccd8785ce86603c2e5c88818d8ea4
 38468163,khalby786,261213861,jsoning,.all-contributorsrc,0a176497130eff8c77d52ad732796e7f8ffb1890,2022-01-31T09:55:28Z,3e2725226328c5923afb586916d6a98f6b0da1e0
-47806818,bicstone,528440344,gatsby-plugin-fix-fouc,.all-contributorsrc,de9b5ba27ee9316a9d63da364db9a260db607814,2022-08-25T13:51:59Z,348c4dfcde2d01cc67339df861b99dface91bb93
+47806818,bicstone,528440344,gatsby-plugin-fix-fouc,.all-contributorsrc,de9b5ba27ee9316a9d63da364db9a260db607814,2023-10-24T02:27:30Z,f23ed64b5099cf99efe242b885540cb56f291df1
 595162,MikeCodeur,554669649,typescript-avance,.all-contributorsrc,4fc1162dff0ee62bbe0e8ddfb28c3b3364e3bd58,2022-10-20T07:31:50Z,498e1b963b2994bf4fecea8d3bffddd4f2ac7d28
 72231752,AcademiaTemple,302223208,website,.all-contributorsrc,25d2674a7233ad5e14b8f07f6ce02ffce434ed44,2020-12-27T03:16:23Z,3573a293da0c19c2a4a873ae123c7d1a5d52d389
 104449813,managed-components,501605152,linkedin,.all-contributorsrc,ace009a0512f436443a8f4b6552a64c099090265,2023-02-22T16:00:37Z,47f892442ec0b1a47096de6165157b1461d1c6f1
@@ -648,7 +648,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 8695579,SK1Y101,399915677,PoketchFitbit,.all-contributorsrc,abd26a03470cdfb9f8e1b2fde47b48f2d40d05f7,2021-08-25T18:12:37Z,47f5babab7ccbad99e32edcd22fa5cb69e695047
 40635984,marcinmilewicz,319134582,lumberjack-firestore-driver,.all-contributorsrc,9b30f4ab7ed91d8c92a0d73af0dd64121df33626,2020-12-08T16:15:37Z,3db17321caf3d8adc6640317e9db4e71947defa5
 78414151,colouring-cities,439346304,colouring-athens,.all-contributorsrc,fb3d59fec49b493511f778525c46a5d1d686fe9e,2022-01-11T15:52:33Z,36f6f1b618604397e53f2031f69921f18abbe1c1
-41095225,dromara,455584258,hertzbeat,.all-contributorsrc,f613fd344929cefeebeb5c8559553bf3a00032ed,2023-10-15T13:58:50Z,66ad38c4e66b35c7b1033c24914b6bbe4c585f39
+41095225,dromara,455584258,hertzbeat,.all-contributorsrc,f613fd344929cefeebeb5c8559553bf3a00032ed,2023-10-24T06:32:51Z,acdd1581144c0879e62428336d82238e15d4d940
 77719156,brain-slam,184222835,slam,.all-contributorsrc,01fa782770a2667a627da29a13a0f5c42a5800e3,2020-12-16T15:44:49Z,396a3985ace2f25e1a6ec0df95432abec1d362bf
 861044,browniebroke,15634794,deezer-python,.all-contributorsrc,0371bc4e95949b85b286ea882eba6f11dc98c715,2023-08-03T19:38:29Z,52ebd96c6b0802ad50f46675a16298d232abe5c6
 26260104,eduayme,184948124,RescueApp,.all-contributorsrc,f78f7254dbdb16f646792d4e9a5e0a822890db98,2023-08-26T08:37:13Z,e740e4d6f8fc4fcabf5a26a54ae73061618d4778
@@ -1281,7 +1281,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 15348830,CiviWiki,100273476,OpenCiviWiki,.all-contributorsrc,6d9abf5b896dacc889f91635eeb0049cd3832c52,2023-04-24T08:49:56Z,cc5cf3614460a67e516e320b43521b8e252e4964
 57702698,sourcegraph-testing,531629994,wtf,.all-contributorsrc,b136df3301814047377d1326b7b920169bf641b9,2022-06-24T23:08:37Z,ea7db25edaa839cbaeb266f0ad91987f36a89acd
 848102,nasa,395115175,Transform-to-Open-Science,.all-contributorsrc,91e295f1755992ce2c0c19aa430fe2e068d89619,2023-08-31T18:49:12Z,0b629ef8ba365f9395f9d637816566546818af91
-61243378,blitz-js,28627350,superjson,.all-contributorsrc,ae7dbcefe5d3ece5b04be0c6afe6b40f3a44a22a,2023-05-18T08:27:01Z,428e271e1a3b0f220bac56049c900e1e209ce172
+61243378,blitz-js,28627350,superjson,.all-contributorsrc,ae7dbcefe5d3ece5b04be0c6afe6b40f3a44a22a,2023-10-23T14:13:44Z,2b7ef5d184306856778fd6bc98621cc8f4223e15
 2132348,shawndempsey,366242693,advanced-react-patterns,.all-contributorsrc,319d203f1b010e80f5a5800a62d03c78853c15b4,2021-04-04T15:01:54Z,7686b82c3f6b1faff9fb6d618ac5c07f7aa601a7
 6943596,prattvaidya,372947727,epic-react-advanced-patterns,.all-contributorsrc,bc57045a79e83da0284490d96be926debd5bb6bc,2021-06-01T20:02:13Z,7686b82c3f6b1faff9fb6d618ac5c07f7aa601a7
 4131693,DallasCarraher,301269791,EpicReact-Workshops,advanced-react-patterns/.all-contributorsrc,cd7250e4e8a00216ccebec2538d02550bc003d35,2021-04-21T18:18:07Z,7686b82c3f6b1faff9fb6d618ac5c07f7aa601a7
@@ -2032,7 +2032,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 17976252,asheerrizvi,416719117,react-fundamentals,.all-contributorsrc,f3201c1be27e98cf8fff82ac9e398133f4b9a557,2021-09-13T18:25:13Z,2af032a12c7ffe72119a2883bf4db230fd0da992
 8260834,Berkmann18,181698092,json-fixer,.all-contributorsrc,7f72afd309a35e59dea587ce4b6d9f031e81c045,2022-02-07T21:20:10Z,1e314c2ba2aa7a7b4824a901f898ee6666180398
 16274568,Nowaaru,524345981,suwariyomi.rs,.all-contributorsrc,731714cb5f68496a22967ddb2e5dd39f1c1dd1ac,2022-10-01T05:51:22Z,2e2265f4f242f001769384e3a2780df57be213ef
-12829855,eesast,312625650,docs,.all-contributorsrc,5746a5f42dffe6ba18bf297ebec5c65b075f79d1,2023-06-13T17:43:55Z,21fa07d833a5e7da85d0d860b7c39330e4f82709
+12829855,eesast,312625650,docs,.all-contributorsrc,5746a5f42dffe6ba18bf297ebec5c65b075f79d1,2023-10-23T13:56:40Z,3a220662708fe1b5efe7b62a973cbbfc5ee49938
 21308003,wellyshen,268840316,use-web-animations,.all-contributorsrc,0252f7fa99ec9860897fe7bfe0bc77b934834ff3,2020-06-02T15:36:49Z,2c8e0ba0e4657163783e78efa2849eba15888847
 1301564,ageddesi,526623379,Mocked-API,.all-contributorsrc,c20e88110954e378c5b78eb7781a6410d8564c94,2023-10-16T09:38:15Z,6d0065d675195804d8d70dae6a8694f6baaca599
 61842142,sandip2224,313805277,Best-Web-Development-Resources,.all-contributorsrc,d0b46abe830aaaafe0ba7a41a07259cae4dc7f60,2021-10-30T16:05:51Z,2a1a574e614483279afb61988802608c4ad97484
@@ -2046,7 +2046,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 4137400,sprylab,317227865,eslint-config-sprylab,.all-contributorsrc,de37fbdbda6c1f395b91c9b34dcefc41a9b2e5ec,2020-12-06T20:50:03Z,1aad8058caae6f3940d3d18e2c466255b39771fe
 1901832,kentcb,316421087,azure_application_insights,.all-contributorsrc,be735bc6f7ec0b826a84740882e116c1465af44f,2022-11-06T00:03:22Z,2696406b3a78fab884c82c7413e9f43ce7cf463e
 1292510,svrooij,107399334,sonos2mqtt,.all-contributorsrc,46bf61e089b77337baa287f22cd419b2bfaf3c49,2022-01-22T22:54:28Z,236957b87e12e6e94f7f59c8f9c75ed337bae22d
-97250344,litestar-org,435625572,litestar,.all-contributorsrc,5f3e2e4c9ee3ff17f52927f222459036e1c315a2,2023-10-12T05:17:46Z,198f72462d4c595f1b3ca8b14350247258208e14
+97250344,litestar-org,435625572,litestar,.all-contributorsrc,5f3e2e4c9ee3ff17f52927f222459036e1c315a2,2023-10-24T04:36:14Z,187b82ec1f35c36469ec1321dc32225d44042612
 20798510,jthegedus,116941922,firebase-gcp-examples,.all-contributorsrc,91dc9348d9a2caf12af41db6c9bfecbed325fbd8,2019-06-12T00:01:56Z,254b4869a5386c2225f53c9686ac1dcc60d3e972
 48357542,openclimatefix,248342867,metoffice_ec2,.all-contributorsrc,d8f822c3b005ee2bc79b3775381879162fd65ed4,2020-07-05T15:49:18Z,276067bb0de8f5199c8d424d2c8178c8c0c10f52
 39141526,iftopalmas,260695316,aglomerou,.all-contributorsrc,2fb5224743ef02cbee47d97da2f88d957ed93fc0,2020-07-10T22:56:11Z,1fdbcdd534a22dae2d94fb13a2d7169eb39ff45a
@@ -2321,7 +2321,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 1500684,kentcdodds,189649243,react-fundamentals,.all-contributorsrc,f9a3d0f6a0472995b1d9d967b4162322788f9b28,2023-05-15T12:44:02Z,c1c61935d63861f87999872a414dabe45b0c9039
 36965392,ml5js,105701360,ml5-library,.all-contributorsrc,19c906cbf5e52480cf6dbb33789445ad0dc9366f,2022-05-04T03:59:47Z,1fe4aef35947ec017b94a0a32597b2e147e6c586
 39977793,FEMessage,136268538,el-data-table,.all-contributorsrc,452638f4ee501183a0d060faff0a2f55673334b3,2022-07-20T08:32:17Z,49ee8d32a114635e0dc51b59f6d6d7171920f5ce
-25179978,carbon-design-system,84835535,carbon,.all-contributorsrc,5f04156d58d885c444730cde22031e4eef3f43d6,2023-10-16T20:49:37Z,a39fcda0c3dfca09160c915639c4a901d64719e0
+25179978,carbon-design-system,84835535,carbon,.all-contributorsrc,5f04156d58d885c444730cde22031e4eef3f43d6,2023-10-23T15:51:21Z,27193f542099915d7b7da5bc0ca14cb15281f4b2
 5236035,fzyzcjy,413292017,flutter_rust_bridge,.all-contributorsrc,5c05c5100daf7876602cdacb69b745e955779876,2023-10-11T02:58:03Z,3a8baa1036e25c6da33b82906e8689997efb968a
 92298186,deepchecks,415969774,deepchecks,.all-contributorsrc,7ec66c6dc7b421bcb2374717bcdaaf12f3e94cb8,2023-08-18T11:46:39Z,932149b001695cf75c871b04ae79762cac1fdb4e
 51129600,befovy,189247938,fijkplayer,.all-contributorsrc,3e1d25b86ca7303c4e8ff227849f7c94a7643432,2021-08-07T14:38:56Z,af0dc24473fcdf14822faa58f3b064d0ace96a4d
@@ -2925,7 +2925,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 101691222,tencent-quantum-lab,492659956,tensorcircuit,.all-contributorsrc,bff00786fbed5fea7cd8bee89400530dd0d408ae,2023-08-17T10:47:09Z,b76d6a80036da5d26a8b5dca17beadaa398eb972
 35221559,gaphor,235448,gaphor,.all-contributorsrc,68634e7976572d62f69d438ad67bee4bfed899be,2023-10-09T01:12:53Z,7ee212617dfcb3caf1bfb8b96fb3336b8510a868
 52626448,hamonikr,369408304,hamonize,.all-contributorsrc,31e94909fa4302b43596eaed9adbba3ce8c8899e,2021-11-08T08:11:09Z,352229979c5a12bda82047064f1c917e6fc4ba0b
-57568598,open-sauced,637949848,guestbook,.all-contributorsrc,15e3aaa350fd1b0a1d871670b40c9108eb151500,2023-10-23T10:56:28Z,fc7dd645860e559b7b4510794654000392f513d5
+57568598,open-sauced,637949848,guestbook,.all-contributorsrc,15e3aaa350fd1b0a1d871670b40c9108eb151500,2023-10-24T11:32:36Z,bd94405ed94dfb6f2d8be536f950e683540bacc6
 21237954,codebender828,220743488,breadstick,.all-contributorsrc,739c5e0f5c397bbfeecbabcfb5bdb1390d2b1b9c,2020-01-25T19:44:55Z,36bc26ef1b108d088bae8940deaa706fec55a4f4
 33504467,fowad-sohail,338180832,next-cms-ghost,.all-contributorsrc,4e2b3f0b4fdb9055de746be96c87dfd9498999d5,2021-02-11T23:35:15Z,34a8d90c5614f26e6beb1c8c458afd1edf906af3
 3152718,hiro5id,224293722,console-log-json,.all-contributorsrc,09d2a5c48e0956e1fa1d92ef4bf337c6cec87bfa,2023-04-14T06:24:10Z,347e4400551da3c4fa06a1cc7e9bfb97c7903752
@@ -3316,7 +3316,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 47351025,HarshCasper,274711817,NeoAlgo,.all-contributorsrc,b0b5c89dc3f8945dc9eb134ccf84d7f0d4d09bff,2021-07-26T06:03:28Z,a92695eb0600006d5c8848c3b2f9fde1e5236b78
 33676,cassiozen,347174294,useStateMachine,.all-contributorsrc,bdd851b97363de0eff0977a7c7c61cabb0429ee8,2021-07-28T15:40:03Z,bd7fe6a1e61f708955c3a4255eeef7d9220ef11c
 161466,thechangelog,48701042,changelog.com,.all-contributorsrc,54022d32297d09b54bbd7457d44b469540710b49,2023-10-21T23:53:14Z,ca741ab4af69ccb3f92863635ff495636be3eaba
-6250754,ethereum,116457726,ethereum-org-website,.all-contributorsrc,7ccc6c85ef4e46d21debf0381f7137faf2a4f5c1,2023-10-09T17:21:51Z,53aaad9b1cab956de1b1935a2217ee44cdda47c6
+6250754,ethereum,116457726,ethereum-org-website,.all-contributorsrc,7ccc6c85ef4e46d21debf0381f7137faf2a4f5c1,2023-10-23T17:07:55Z,aff162fb82ecb023a900ba2c9a302af6eb34b341
 12504344,expo,86749744,examples,.all-contributorsrc,68dac2c6a8acd136e1389a25afea5583eff78850,2023-01-31T17:45:46Z,6d815be2b202eff121ce3d3a0f8bf72164408093
 47157286,downshift-js,98315735,downshift,.all-contributorsrc,740b5b182d1b74c3e58a94be81098f4539cee00c,2023-09-25T08:33:15Z,39a8dddefa0210b4b1009334a3673e3a96cb5150
 65381530,qd-today,262975445,qd,.all-contributorsrc,c7ff57f97daea5907dfa5d92db965e6a4e3a72d1,2023-05-16T08:32:12Z,d6cbf50299f050fb46794525dfbba7b4e37201da
@@ -3904,7 +3904,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 47340962,denvermullets,300617713,epic-react,.all-contributorsrc,b67a2f26ef04da8b78489a89659050757f59bbf3,2020-10-01T03:42:39Z,f994e7527d14231060918b50dbe9915e256d598b
 33519579,teleporthq,171830793,teleport-code-generators,.all-contributorsrc,050955a1f0d300f005909e68ad2e26605a01fd1c,2023-03-30T16:31:23Z,968758c5ff6b1dfd2c47c5c95753a0b217050bdd
 1624279,garetmckinley,72926058,hedron,.all-contributorsrc,1c437904d8132d5f88e25d296878b31b55db9673,2019-02-09T19:19:33Z,e41909022337735197db6f361140b44260fb1786
-6693837,thi-ng,118700275,umbrella,.all-contributorsrc,1f39ec859e3df2d7761ef381953cd12deaa6e83b,2023-10-19T08:31:59Z,5ccffcbabd02276a8a8f0eae4621eec9a129bbec
+6693837,thi-ng,118700275,umbrella,.all-contributorsrc,1f39ec859e3df2d7761ef381953cd12deaa6e83b,2023-10-24T07:30:48Z,194a3f3b84cbcd504b2abe4fffea6a9df949cce8
 17256082,vedantmamgain,275569605,DevOps-Guide,.all-contributorsrc,587deb292d0e7b41d8deda75856719ffd0679f2a,2020-06-28T11:23:59Z,b76d52bc8cd451db1078ea4c822923ecebe1f349
 23696140,Darek79,424614488,dkghosttest,.all-contributorsrc,54cfe3d91af77d9ab5d94544b00eefc32f78512e,2021-11-04T13:56:03Z,786b95b4465ed2f655e46b2b9913a55067166ba9
 82864904,rohankumardubey,449313501,miller,.all-contributorsrc,98ac3f99c12bb867f218ca147a6c3ca10bfad9bd,2022-01-04T02:19:01Z,56e56b5e7aad0822f7c7fd782ae3ffe9c7d96ea7
@@ -4366,7 +4366,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 52297642,questdb,19257422,questdb,.all-contributorsrc,681205553996ba45eb6c8e9416ea8e64534c5441,2023-10-03T10:24:54Z,19d54027d24889dc3f057e1a1af500bccb2bc8e3
 65528542,stimulus-use,264849287,stimulus-use,.all-contributorsrc,66c46b78a821d5c22230da525f4ff9055d34c048,2023-01-25T14:55:57Z,e186cdc0ee98425fde976f3be90baba1bb628fc3
 10438542,OHIF,44164233,Viewers,platform/core/.all-contributorsrc,08ff214ea69a67aae995c393162b532bfacf62da,2019-08-13T19:36:46Z,f8dc5c140af06450d2636e7a9dc49c4367171b49
-18304793,alan-turing-institute,155712190,the-turing-way,.all-contributorsrc,644f434b997a08a3df0455019c8fd03bcfe2f44c,2023-10-19T13:08:04Z,64d705135f23c4083c513a1feabf1e812b7a57e7
+18304793,alan-turing-institute,155712190,the-turing-way,.all-contributorsrc,644f434b997a08a3df0455019c8fd03bcfe2f44c,2023-10-24T10:15:56Z,4664df69af2e618a3532466fc7c665cf73855e47
 97908131,aleios-cloud,203430138,sls-dev-tools,.all-contributorsrc,2da92e44578ed07ab938c653cb5d5b9552ea6a7b,2020-07-14T09:15:33Z,a2fa267a84b3b9cf2b8ad6bfe26077e45957b684
 3748658,mathdroid,244649309,covid-19-api,.all-contributorsrc,020ad800b8c0657b74b3ee0ef9dbdf89ae47b2aa,2020-10-18T12:15:52Z,b7e2f30ed197b21d643cad98a888c9313ce6ddb4
 12077198,nfrechette,133742035,acl-ue4-plugin,.all-contributorsrc,c4691b6e4d58a7ac4036d4313ef49e9baa6486db,2023-01-21T02:27:01Z,b6b603d1fe4755cfa927371a0fb48e5c0d7eec66
@@ -4670,9 +4670,9 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 51153443,dscnitrourkela,298038473,project-huckleberry-archive,.all-contributorsrc,f3925d5a077c2e88b706e507e5d7b3ba820bf2c9,2020-11-13T18:46:52Z,6d24e5df0fe2b189c7d68b1a422903f91b5d4e26
 5236035,fzyzcjy,488137067,flutter_convenient_test,.all-contributorsrc,70c8ef7ffc7df95d06cb7ff6a3b761f72ec961a5,2023-10-11T03:01:06Z,1014be7cbac0da86db9d43e8f6713d578cb91061
 94029,moul,303964205,test-github-actions,.all-contributorsrc,9cfa910989acbed6e5195736cee7c046b8e28a2d,2020-10-14T09:31:42Z,6bd19355aafb7a1f24380b9662e2f109f3a43420
-6711766,aiji42,521266004,zod-i18n,.all-contributorsrc,ac377c31b6e433e5232bac113bc1cab5cd80c880,2023-10-06T04:48:26Z,c28e5deb527dd27fd1dfdf0b9753be3b83d3ab5c
+6711766,aiji42,521266004,zod-i18n,.all-contributorsrc,ac377c31b6e433e5232bac113bc1cab5cd80c880,2023-10-24T08:56:19Z,42fcc47f091aee194df05aae11dcf6934bb97e8f
 39670415,acacode,233476269,swagger-typescript-api,.all-contributorsrc,27cdbcb17463b21cac09db98debed4d4adcf8646,2022-11-04T06:58:35Z,f6dfee539bfa51965e01a2bf8db707e3be4b2087
-5257677,mautic,12204147,mautic,.all-contributorsrc,620e37137aa5da8e073db266f7ea8ce59f35216d,2023-09-28T08:54:52Z,73a423a8e4933d0268b49af3c9e1d127a02ef369
+5257677,mautic,12204147,mautic,.all-contributorsrc,620e37137aa5da8e073db266f7ea8ce59f35216d,2023-10-24T11:26:00Z,c4b9f6399c278aa9fb4a3d2b67bed225d88e5af2
 5127501,kutyel,52595427,linq.ts,.all-contributorsrc,fd3eb1cca64e34a987e787378a771ba8cb603c7e,2021-10-25T09:33:34Z,d1e6062ff92c15812d7b7b2174e12ef5700813d5
 15868458,zhaoolee,228135723,v2h,themes/next/.all-contributorsrc,d3dd405c03c7b7bb74edeb06fc7914bd2cf95fd8,2019-12-15T08:30:42Z,5d3d232278f9cac8c417a6a7e5ec08919a699f59
 18672345,o0pk2008,182230554,BlogFile,themes/next/.all-contributorsrc,53b384f769dbc53c9bbec6e88f1912e41c91343d,2019-04-19T08:58:59Z,5d3d232278f9cac8c417a6a7e5ec08919a699f59
@@ -4849,7 +4849,6 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 75403863,jzeuzs,470519823,sodium,.all-contributorsrc,7375c41e46029830e21834b3bdea7f656cf0a7b2,2022-03-24T04:16:31Z,1df45fd4d8cd7c8125ba569cb6ead5367351d795
 60153151,blockmatic-icebox,193982563,eosio-hooks,.all-contributorsrc,be2d524f95dcfb161e8c7a6bfab75d85499597c4,2019-11-10T18:01:50Z,1f5e9d95b2779146a6c7b91761b0a97ba59488a6
 60940476,worldcoin,478241278,world-id-docs,.all-contributorsrc,0b33168088f0b28dccc7f98bc45e78a17b67add2,2023-07-20T12:18:31Z,206a3bf7b650f79c92803a716a792930e6a02bda
-62787419,arjun-c-369,528789147,we_chat_asset_picker,.all-contributorsrc,478a7ea9581ab7b6aa19bcf3debec30c85e27812,2022-08-25T10:03:57Z,31c3c7a08666d8d1de6a532a3de0ab15087c7099
 58216243,Aztaro97,629110101,42-daily-dev,.all-contributorsrc,e03986d3585a08393ac253a5a90bcfb4acec31f0,2023-07-21T09:19:35Z,31404fb63eabadcd9a42cdbb4332242d32b7b6b0
 13641275,OCNS,599160131,simselect,.all-contributorsrc,d4b02a688f1ced1c646d963fa6c22099d855a4f9,2023-07-27T14:55:29Z,3da4e89bf4f34812bbffe9b33ba9f62c728f8807
 12469062,ThatConference,199465168,that.us,.all-contributorsrc,bcee9e6c9b563170fcecd194af616f1358058bb4,2023-07-20T02:23:57Z,478bda0f7922a6c204c2bf87280d80af410a5037
@@ -5258,7 +5257,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 22371492,AtomScott,433316752,SoccerTrack,.all-contributorsrc,433a43d443e6f7a989532a6360336fd8a160780b,2023-08-10T08:09:32Z,2d1bf5f2b8a85a87a1d46645bce14ebb448ecce4
 67116787,tj-actions,286065192,auto-doc,.all-contributorsrc,166829dc6bb849cd55100e9305088303883f53ab,2023-09-19T16:42:46Z,ad912cc61821b7568030df041266d1f294360a48
 69191779,quarkiverse,296028353,quarkus-google-cloud-services,.all-contributorsrc,b32cc2dd10d385d6c1a4de414fef68f4e72742ae,2023-09-19T09:21:40Z,b261c5a2125cff124f76dbecd1a632bd3551e3ef
-139483859,the-turing-way,155712190,the-turing-way,.all-contributorsrc,319e4f6f96fe0e853af9a752a51cefce2a467f98,2023-10-19T13:08:04Z,64d705135f23c4083c513a1feabf1e812b7a57e7
+139483859,the-turing-way,155712190,the-turing-way,.all-contributorsrc,319e4f6f96fe0e853af9a752a51cefce2a467f98,2023-10-24T10:15:56Z,4664df69af2e618a3532466fc7c665cf73855e47
 45966257,JavaidAhmadKhan,428946182,developerFolio,.all-contributorsrc,a5eceb452f8ac93f88747dc505741bf61b25468e,2021-11-17T07:12:50Z,99cc34487c7de40996f9b5abe6699662dc34eaec
 1106995,ShyykoSerhiy,46890536,vscode-spotify,.all-contributorsrc,a4b5237984c4bba22e6acd16771b78bb3f1157fd,2020-11-07T18:46:18Z,96b0f16b0281b0d7ef74b8c9c54986ac95e838a2
 52334437,Divesh2201,388871418,divesh2201.github.io,.all-contributorsrc,1cf4547912e053418dd36fbc9d68a5817990cefd,2021-06-24T15:48:14Z,99cc34487c7de40996f9b5abe6699662dc34eaec
@@ -5319,7 +5318,6 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 45860984,twilio-labs,90015615,twilio-barista,.all-contributorsrc,a0ad1f17d3f28f24b4714735f7cc6ff64c465dc9,2019-01-22T22:37:33Z,ea27a996a938fa76ffaeed97c17a86299d693af2
 57757646,SUIBE-Blockchain,258240725,FISCO-BCOS-Toolbox,.all-contributorsrc,fc35e60ba368769547ed9582747ccf74f00274f3,2020-08-02T09:01:34Z,a8c05da60c850e639855344c7d3cea2d58b6dfb7
 21308003,wellyshen,66834034,react-cool-starter,.all-contributorsrc,b50357fd29355500e5dd12203eaa9eb9f36b5318,2020-02-28T05:17:36Z,c1e2a80e57f31f8c04420a2dfc3b9f5ef9bb6cbf
-62740231,lengyue-ck,677609455,itihey-docs,.all-contributorsrc,5f1f03bfb1f89f1b15d776eada1cbd35bc9a2a3b,2023-08-12T03:54:08Z,acf982c6c2f87382c24b397aab8d63d0cd8853d7
 67852159,qle0,669878370,posthog,.all-contributorsrc,49fd312b31056b65b9064ff953e2c474334867c4,2022-12-19T21:13:17Z,0fb5ddbef5847d4a64ff436ac41b5432ae4cc1a6
 21760321,Fierce-Cat,673130381,posthog,.all-contributorsrc,49fd312b31056b65b9064ff953e2c474334867c4,2022-12-19T21:13:17Z,0fb5ddbef5847d4a64ff436ac41b5432ae4cc1a6
 36472216,ayushanand18,606737718,hackathon-cool-react-starter,.all-contributorsrc,8cf8da33e210425066ee0b7cbf62dbffaac80589,2023-02-26T12:22:03Z,c1e2a80e57f31f8c04420a2dfc3b9f5ef9bb6cbf
@@ -5551,7 +5549,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 16365952,r17x,533953756,fetch.macro,.all-contributorsrc,1f4a0cdeeb1cf94ef00d4dcdd585969c6d721a78,2022-10-09T06:23:45Z,70a0d2c8f5af0d7025b5aef98b7a77e5d9de475e
 234708,spences10,387004664,sveltekit-embed,.all-contributorsrc,2a74e8502a5a7809f14f94a1c7f31cfd851a08bc,2023-03-18T07:04:45Z,7077f920c1216e7d12eb5e502ecea2f799b5b62a
 31737171,doanvngearinc,685346104,assettracker,.all-contributorsrc,d1ab139b0fac3cfd4b2b190f4bdbf541f3332e3b,2023-06-12T13:05:43Z,133e8849d22770db664826fb90275a603173fd96
-132869025,vanjs-org,637646872,van,.all-contributorsrc,9dabb4c766cdc8862252f64f6dd915e3d7955155,2023-10-19T04:08:49Z,d60a879dba1c646b6f380b9c9b3c653314114f52
+132869025,vanjs-org,637646872,van,.all-contributorsrc,9dabb4c766cdc8862252f64f6dd915e3d7955155,2023-10-23T15:16:22Z,dfb6a2d6617e616608d0928314a3f4e4bdf08013
 127993667,Agenta-AI,632871628,agenta,.all-contributorsrc,bafbfae88dd6e6d31cd4823e0f03e535f58ba22b,2023-10-17T12:42:36Z,ea8a5178b25066057702fc9eceb93328b92df634
 105747160,player-ui,513673239,player,.all-contributorsrc,ed16dbb6da5b6c1ff7242d7157ef0a5e0040f8ce,2023-08-08T17:15:24Z,4cdd4875ee5ba0b422d355b3c46a5ef39482ff1b
 112583732,actions-marketplace-validations,571441912,AlexRogalskiy_github-action-branch-mapper,.all-contributorsrc,c99a4b0faff015eddfcddb036b0c800619ccfba3,2021-02-16T21:11:37Z,55e491a64cec2f39417f8c57766e738cd21c8ac3
@@ -5627,7 +5625,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 4579340,mvfsillva,145943191,dialetus-service,.all-contributorsrc,87917aa50adf00ddf44152d7514e7cd379cf010c,2019-03-20T19:36:43Z,1da8fecfcfb178dacb42fd2cdc0002972df13c93
 664001,dictyBase,164950468,event-messenger,.all-contributorsrc,ec079c5457bae8e09b238a8382ee2900a5850790,2021-02-09T20:04:57Z,1c30e42d2cd5e0a32797b546957928b06823071d
 85821867,ourjapanlife,502299271,findadoc-server,.all-contributorsrc,36ead9e15019f1c19c1600ad0a5cda619bf8b86a,2023-09-05T08:13:43Z,289cafc3dec12965aa2eb89f0f42d12dc2824e6f
-20408767,Ironclad,631169911,rivet,.all-contributorsrc,1da26be0b94516b2c8ba20ae9bdbf2b68df69074,2023-10-17T21:01:28Z,3c9632ac1e33f1720642bfef57f0ae1e83ce48f0
+20408767,Ironclad,631169911,rivet,.all-contributorsrc,1da26be0b94516b2c8ba20ae9bdbf2b68df69074,2023-10-23T19:54:49Z,031bc8981ae1b46e38ebc16d38138a5b31220d1e
 53471801,Alexa-RR,572456087,StudioDocs,.all-contributorsrc,b195c3a2d3f89fff5cc01b518411a8b425f0c58c,2023-09-26T03:57:05Z,d20998fbcef3eab29c3d6c6cf58504e3fc20f501
 37238315,vuestorefront,312250274,shopify,.all-contributorsrc,c0103642ba1ea118740d7ac6b5c821ba40aed5a6,2021-08-10T19:05:21Z,a6a37c699838ff222efe49e81f0f9a1a948e0d94
 121691637,elgohr-update,583864038,shopify-build,.all-contributorsrc,ce9c2b8296f0222cb209ca80667ad2414929b488,2021-08-10T19:05:21Z,a6a37c699838ff222efe49e81f0f9a1a948e0d94
@@ -5643,7 +5641,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 105504239,chayanisdev,689015096,dhcbuy,.all-contributorsrc,df35389a5f76416dcc1faf75c01967705e923c2d,2023-05-31T18:59:38Z,06eaf0f7be0c68d0ccd37902fa601a3f9211c4f4
 6154722,microsoft,587965862,finops-toolkit,.all-contributorsrc,f06f23076fca2aeca61481d097c53757fbb2201d,2023-09-29T07:33:41Z,3aba4d60dded90c4b71a75c3c94f1f9adc4139a3
 69191779,quarkiverse,518508802,quarkus-apistax,.all-contributorsrc,f3aae76ebdc174d7902bd982fa8c79a775d2efcd,2023-09-01T11:02:14Z,4518071ef5e2f817a6863dce7869c756256b4369
-8546709,spenserblack,591999963,gengo,.all-contributorsrc,6eb2c283c08a5d81744bd7454ce76cfbd1f82246,2023-10-13T16:25:10Z,77547876786d4a5dec34e64343321e92f9dff995
+8546709,spenserblack,591999963,gengo,.all-contributorsrc,6eb2c283c08a5d81744bd7454ce76cfbd1f82246,2023-10-23T18:44:24Z,8eb76f41b50aaa8484d879d593ce585728e4e83f
 42516515,Manthan109,303978967,Portfolio_Wesbite,.all-contributorsrc,d2b986894421ec808f00570967622b9097bcaeb7,2020-09-27T09:08:27Z,5e896fd61865a34c3d12b6e6bdcffe11364e2ec5
 7734956,brootware,476271445,awesome-cyber-security-university,.all-contributorsrc,a6f21389c4eb508dc863c38a8c95ea289771a67a,2022-05-23T00:35:01Z,9663902109b062e167009b87fb5f116e6c193c70
 1263650,isachivka,163071612,react-textarea-autocomplete,.all-contributorsrc,a7fa7db1269886243d40397d77f69d8f46e9a086,2018-11-25T09:22:36Z,cad5f8a958bfffab23509231600e9287b1544e46
@@ -5797,7 +5795,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 138494736,peternish,689182147,OpenChat,.all-contributorsrc,2430d0637c70bbe4bd7e08409efe196d1d96a323,2023-07-20T19:48:58Z,8bc8106004c6c2b0055340aba70491b753403f00
 105612259,anitha8242,684934299,open,.all-contributorsrc,1dedd737165e916291ae147791a1fafd9a960fb1,2023-07-20T19:48:58Z,8bc8106004c6c2b0055340aba70491b753403f00
 7364245,briangann,69803338,grafana-gauge-panel,.all-contributorsrc,e308514e97b18f1200183cc20c1a5e17252630e4,2023-09-25T02:22:38Z,127542c5be6347865278e01cfba9436be838b32b
-25516557,nartc,689377895,ngxtension-platform,.all-contributorsrc,edbc50592bc496819eb88d0cacdf518e70685e68,2023-10-21T16:41:01Z,1eceb40076f7118f192fa34dcc0ff2fe92481583
+25516557,nartc,689377895,ngxtension-platform,.all-contributorsrc,edbc50592bc496819eb88d0cacdf518e70685e68,2023-10-23T14:31:32Z,68c1d1f9eb4d114344b4528da353cb7750c66600
 8493007,mcnaveen,695250800,cart,.all-contributorsrc,fa3db1e6b0e719db44ee2c6c74cc049dd9cdb630,2023-09-22T17:43:30Z,27dd75a0fe299dbeee16fa5cb7a10d2e41720d5e
 8027933,AndreasAugustin,526718366,teaching,.all-contributorsrc,c95299bf0917e41c82f9d07433a40935dda08bad,2022-08-19T18:46:54Z,1a657bddee276cd7ac0061d26160783c6589f558
 136061549,X-oss-byte,695428003,starknet.go,.all-contributorsrc,a4312840474d9d745dad4e13ae0b983243b1af97,2023-07-11T13:47:12Z,364d6d6a5491f082da9b630a6d6f7357fae1d198
@@ -5961,7 +5959,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 96631656,naruhitokaide,655873807,nsfjws_test,.all-contributorsrc,c866ce55965c629acfecf26dc8a8e26080c9fe18,2023-06-19T19:37:57Z,8aecb83cc1a88432f8f1932324d5006b3f9d426a
 2884320,tim-hub,407984639,obsidian-bible-reference,.all-contributorsrc,fc82ec45b3fa7f074d0d966567042932b5d88024,2023-10-01T09:34:57Z,0a7efa6fb9380a5b1ab9a56e8b5b492e1edd68f5
 65412787,kuro337,642505947,rustl,.all-contributorsrc,b4ab71238f3f040ca371a0977b6bcdfea6e8e010,2023-05-18T18:14:20Z,0e1b637367fec51f79e258c4457623e9e3581f3d
-83216382,sayakongit,677637454,sangnet,.all-contributorsrc,3b9cff710610075f1b60d23ddbf9eadce469e496,2023-10-02T07:44:42Z,23530afdb3a03a835ef373d1cfc6ea97237eff51
+83216382,sayakongit,677637454,sangnet,.all-contributorsrc,3b9cff710610075f1b60d23ddbf9eadce469e496,2023-10-24T07:00:45Z,0fc6b6848c6c654030128060801849247a396240
 139546210,zhcet-code-oasis,666373719,code-oasis-website,.all-contributorsrc,e2990f5872f2742ba5721674eee2b47fceeaaddc,2023-10-02T16:34:03Z,32e5d0015dffa46ab56b6c6d9413a6c8d890cfce
 98274844,SenaThenu,698540179,StudySphere,.all-contributorsrc,32f27146416c76feef801db392d47bfc8de9adff,2023-09-30T10:48:53Z,298454d6a991a214b3a28c16cd3f4bf7139eca39
 19380377,LearningOS,650730106,rust-rustlings-ronething,.all-contributorsrc,0d8dd3b5d6772c8023c651f9c87631d7d7916fa0,2023-06-07T17:24:26Z,523202d30312bde06a5691a50bb8c9df7a18cefa
@@ -6201,7 +6199,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 114331892,Naruto0829,630044215,react-redux-typescript-guide,.all-contributorsrc,4ceb6c812633733f489fa72abe4f88f50ac4ad1a,2019-02-12T21:01:02Z,4aab4525a4cc9710926e1401c28706514f254be2
 45860984,twilio-labs,186497028,twilio-style,.all-contributorsrc,ab49535d61e654905b0e8d15085cf257bc5bb6a9,2021-06-09T17:19:35Z,786432bdeb8b61f5f4e47e8e1101d3849671a93a
 79628065,beyazit,367316950,create-sapphire-bot,.all-contributorsrc,d2bb7ab43dcaa187b3d21ca818bf9883679e26de,2021-05-11T20:42:46Z,75d7aa5f8f80391c7c22b63fd0f2b6296cd9e80e
-48790703,zenika-open-source,684003668,cheatsheets,.all-contributorsrc,914f057c92da8a169eeafd08443c04cd34f68d3f,2023-10-05T07:20:00Z,64d3b95565b6c6f3114090f3d19f8b3a9ce8e1e0
+48790703,zenika-open-source,684003668,cheatsheets,.all-contributorsrc,914f057c92da8a169eeafd08443c04cd34f68d3f,2023-10-24T13:02:18Z,b37ca3a55fa3d1bab0fd85e4b6a1645c8854498d
 13602468,klieret,246102038,verzettler,.all-contributorsrc,dc12133d365518099de7e6416ee366cbeacebd81,2020-10-29T09:58:32Z,777f9ef3c4e61a677734ba0037827ec3f346e483
 117921276,PCSHSBR,651035080,symposium2023,.all-contributorsrc,fe4b1a3fbfe0129d89aa0ad6fb245b99e758b57e,2023-09-04T18:13:19Z,77fddd516eb0054f184e2dd1cf662d7e220fd4ab
 84803664,trade-export,696380379,serverless-offline-sns,.all-contributorsrc,965271c3fede7f0f4b108684401f3c2d8760441b,2019-12-02T15:25:23Z,7212c1650bae5c1bd3fb2abf5771e76f05e1f435
@@ -6503,7 +6501,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 11336745,bradgarropy,333314139,use-countdown,.all-contributorsrc,2c8ff879abdab854545b0fae08f369542f2edaf0,2023-10-12T02:21:56Z,0bd1c55c53973c42ac3e20c36e2f353aac37cbb6
 135605375,IT-Start-Gjovik,543691960,startgjovik_website,.all-contributorsrc,cda3cf4b6e255c3035023bd13a0d0c50d9966369,2023-10-19T14:20:03Z,32ad0743810b295921d527cdd92e5d438896d2bd
 79359121,Tonelllo,701028968,RoboticsEngineeringUnige,.all-contributorsrc,c7ae508decb844b479b62a566906487dc23e95dd,2023-10-18T15:46:03Z,3e0cd20dbbd5ff1a5ab542494e7b36f9f16eaee8
-145151736,digitomize,673950346,digitomize,.all-contributorsrc,8beab8147175d82f37b240f3235d847bc1b1c24f,2023-10-21T09:39:51Z,15c38093eb7a1f4c0f0a77381e7b3a0449a6f4ef
+145151736,digitomize,673950346,digitomize,.all-contributorsrc,8beab8147175d82f37b240f3235d847bc1b1c24f,2023-10-24T11:10:30Z,5be918b296e2d76ed35ae62c64a13fd4e94789cd
 1270648,ilyalesik,189754306,effector-localstorage,.all-contributorsrc,5079fbd154e6a9ff1017ae2bdbd12f0f7c3bddb7,2023-07-14T14:39:40Z,45405c8b7371b19b9120969098e871a48b916844
 41548378,immichelle,197828515,gatsby-starter-tailwind,.all-contributorsrc,4fd399023977dcc9f20d844b459780418b55e762,2019-06-24T04:02:30Z,599ad8838c35894450beb86f61d47b8fcc6a27c3
 48357542,openclimatefix,461818412,graph_weather,.all-contributorsrc,efdb6d1c34062aae41fa51c70c9d30167c299fbd,2023-03-24T10:01:44Z,7d1243edf10d11016396a372af38912d1087d3eb
@@ -6549,3 +6547,14 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 6838728,conradreuter,97581321,cancellationtoken,.all-contributorsrc,01ca1e2f9b9b12a371a71f25e9a70ad46fa68f58,2018-09-24T11:56:01Z,762a6fc34580688d8a42a4cac30d9cf8361f3273
 116655770,hackariens,306899629,phpfpm,.all-contributorsrc,14779216ac458baf273c44b12c1b5d140d4c51b8,2023-01-19T11:15:54Z,79fb208357e8a05d4666e1a77f273b3a086bd09e
 57688858,neg4n,406170590,next-api-compose,.all-contributorsrc,012e6f4da54448eecd31ffaeed153be1f02cbb31,2023-10-17T06:41:26Z,70903df59d4c9b417893d62d763b9e40cb05ef5f
+26257950,melissa-hale,709043120,llmtestNew,.all-contributorsrc,362c75f2682b86b75d5eb4f63a7fa65dbb18b52b,2023-10-23T22:32:02Z,d739b08c939a7c0fb3d72d2ab73ee6b1eb1c199f
+32297579,rsm-hcd,271546075,AndcultureCode.CSharp.Cli,.all-contributorsrc,9a183789b41c495beb42252b50c94b03d5681dfb,2021-04-12T12:09:58Z,1cd0a2ab9fd0e25dc27359afbfc4a465b6605a39
+19725091,kimmy-wang,226857181,generator-webpack-generator,app/templates/webpack-loader/.all-contributorsrc,1fde77179e3a875325577f42b43862e0dfff3e60,2019-12-09T12:01:16Z,14818e45f131309ce9994c13888e63c6047add28
+148461488,yandex-maps-unofficial,91804293,vue-yandex-map,.all-contributorsrc,3fd8044374b27385a849e85e23febc91a71ece05,2022-01-31T11:13:49Z,53264ead6103ad8384429be1c085e2df62100f61
+46490801,brenogcota,255322502,ebook-s,JavaScript/You-Dont-Know-JS-portuguese-translation/You-Dont-Know-JS-portuguese-translation/.all-contributorsrc,9fb07ff61cbbc2d3e29e98a0af58f7478167ccec,2020-04-13T12:40:52Z,52622a482a30c63100f44c084d4d417f9b700e6b
+5468954,kreuzerk,707565091,a-transform-transformer,.all-contributorsrc,5338bc431049cc59af99874e2777598bd47af037,2023-10-20T07:37:51Z,76b3b7d796ad6fd3c0b36e44d6c1c295b38ef136
+4131693,DallasCarraher,301269791,EpicReact-Workshops,react-hooks/.all-contributorsrc,31707a4723f7c5ce3a4614e651fd90d16d009e88,2020-10-17T18:49:51Z,7daed9ff138d7dde016e53bd7f38aabf14c677f4
+51139521,KaiSpencer,546713160,shopify-app-template-node-ts,.all-contributorsrc,b0cdb6ab41c29c638fddf31ba92298c8ca326e40,2022-12-19T15:53:46Z,78cdb29a32426770e90be14142842ce9b1e22596
+6490211,InteractiveScapeGmbH,607118576,TuioUnityClient,.all-contributorsrc,06b3668b7eaad88f785d2b244ccf930361d6ee80,2023-03-03T16:54:00Z,74f5965a0470aef08498519e21a82109812c0cb2
+47969958,sun-asterisk-research,205297620,multi-select-areas-image,.all-contributorsrc,7507b6d2e5e90d2575a20400c280cf44f20cdb87,2019-10-01T08:22:55Z,7ef88d0512be50ca53061578e9c958de3478e31d
+101530895,absolllute,291295065,Mega-Hack-Pro-Future,.all-contributorsrc,dcc6720aecea860c6afb2c833c9fab214ce51385,2023-10-10T01:28:30Z,6d9c91038846cb9b6173dec09d2b293213446109
