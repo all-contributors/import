@@ -644,7 +644,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 8695579,SK1Y101,399915677,PoketchFitbit,.all-contributorsrc,abd26a03470cdfb9f8e1b2fde47b48f2d40d05f7,2021-08-25T18:12:37Z,47f5babab7ccbad99e32edcd22fa5cb69e695047
 40635984,marcinmilewicz,319134582,lumberjack-firestore-driver,.all-contributorsrc,9b30f4ab7ed91d8c92a0d73af0dd64121df33626,2020-12-08T16:15:37Z,3db17321caf3d8adc6640317e9db4e71947defa5
 78414151,colouring-cities,439346304,colouring-athens,.all-contributorsrc,fb3d59fec49b493511f778525c46a5d1d686fe9e,2022-01-11T15:52:33Z,36f6f1b618604397e53f2031f69921f18abbe1c1
-41095225,dromara,455584258,hertzbeat,.all-contributorsrc,f613fd344929cefeebeb5c8559553bf3a00032ed,2023-12-08T09:35:05Z,2bedd0bd3853f08eda3f4f5cf76ebf2dfd6502c2
+41095225,dromara,455584258,hertzbeat,.all-contributorsrc,f613fd344929cefeebeb5c8559553bf3a00032ed,2023-12-10T03:01:14Z,141e0deb2beb3b89ecf2620e67634865426b2f9f
 77719156,brain-slam,184222835,slam,.all-contributorsrc,01fa782770a2667a627da29a13a0f5c42a5800e3,2020-12-16T15:44:49Z,396a3985ace2f25e1a6ec0df95432abec1d362bf
 861044,browniebroke,15634794,deezer-python,.all-contributorsrc,0371bc4e95949b85b286ea882eba6f11dc98c715,2023-08-03T19:38:29Z,52ebd96c6b0802ad50f46675a16298d232abe5c6
 26260104,eduayme,184948124,RescueApp,.all-contributorsrc,f78f7254dbdb16f646792d4e9a5e0a822890db98,2023-08-26T08:37:13Z,e740e4d6f8fc4fcabf5a26a54ae73061618d4778
@@ -1003,7 +1003,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 1403842,fand,96729938,veda,.all-contributorsrc,11790b6effba43ad7e061fa13d53dfbacb5c338e,2018-07-24T14:37:04Z,b1634d12182810f37477b4d9e588207602702c4a
 1500684,kentcdodds,170207515,advanced-react-patterns,.all-contributorsrc,130d9b5558c6fb1806898fe437d3e71566fddf59,2023-07-05T12:57:49Z,d167f00bc3aadc478b8dd21148abc876d8fc9067
 30398729,alpacahq,137755267,alpaca-trade-api-csharp,.all-contributorsrc,f71decb455a1da2734aac6883f5eeda5f4d59ffb,2023-11-11T05:26:01Z,b8b191db065ce74a6560d18b0c17ba1267ca1957
-67116787,tj-actions,344672439,changed-files,.all-contributorsrc,86476f23a686390b6aab63bbf59a08ab16f00537,2023-09-19T16:39:08Z,486b1acd7e33b3f2adf44ad032bc5987ae6f51e7
+67116787,tj-actions,344672439,changed-files,.all-contributorsrc,86476f23a686390b6aab63bbf59a08ab16f00537,2023-12-10T06:55:41Z,f6c9b557f7edddd0aabca796b91ef2af7aadac4b
 48289443,Flutterando,226731208,modular,.all-contributorsrc,9ea738b2efacff86481163eace7a5c36af276dae,2021-05-08T02:32:28Z,fda9c7fe1e603bf67cd93b6633bf1d46fe2bd821
 101316734,editablejs,478852732,editable,.all-contributorsrc,1ff75b699c689ca59681084a81b1c5d3865ebcf7,2023-02-21T12:39:17Z,c4b9525b2982d47d4f361c3b4c93870f0f68558c
 29977869,rickhallett,540715969,epicreact,react-hooks/.all-contributorsrc,e07099e753722b25ed604bad67f7b0b259ad7f13,2022-09-24T05:16:48Z,0df64024672b88f760cceebaed9075e2be387d37
@@ -4852,7 +4852,6 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 94029,moul,195443961,golang-repo-template,.all-contributorsrc,aa9e50a651dc971ec5895b6331a3504ab2fd84f4,2020-07-03T16:31:17Z,70a35200119b0ba5ce1cfdb29b5dbb1db7b08115
 43716242,Sanketwable,217672008,Graphics_Project,.all-contributorsrc,9b1e9a08fee34afc1b8884f4378508b7743fb9e0,2020-08-01T17:23:52Z,72bdd5b7082e72d801d9169f4d4fcc759a56eb45
 25959096,brionmario,192663862,php-starter,.all-contributorsrc,c140d0c19ed352042c1ea3e04a843537a9580fc3,2019-07-12T09:46:21Z,70e149fd64ea28f822a7556496c6232fb8fe151c
-18304793,alan-turing-institute,612562305,professionalising-data-science-roles,.all-contributorsrc,c62437d9c8d442ad08acbea92ba109c6e6e625c3,2023-03-14T16:51:11Z,6eee17e3a561b865965c6475cfb13696f6828887
 2284908,elzup,85814989,dentime,.all-contributorsrc,8194825f56c3a04a06a473906a628ad96ab9cdcf,2020-05-22T02:53:14Z,70cd9c9f34fa7e8e713bb2c4cc8186f6bff3884e
 35956201,USRSE,449040779,gallery,.all-contributorsrc,8baa6f2f4936ae86ad32edbe84820e9c0917e104,2021-12-07T21:10:02Z,7252dc80a1c4ba212e10d54ecfcbd3e33508c2ee
 93456378,TheNexusCity,500579994,TheNexus,.all-contributorsrc,20f9f4e4da4ea33dccb057d4d41486170cd32ee3,2022-06-11T18:42:24Z,71ad60151bada84d20c929c28d4c10ab366907ed
@@ -5703,7 +5702,6 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 55338215,34j,693924543,lab-student-survey,.all-contributorsrc,645599dad1bc36de453dde74580f2297bac4e5a1,2023-09-20T01:46:41Z,172d4b7092bfee9777d868964bce53fc1f68063c
 26035935,goelshobhit,687623156,dummy,.all-contributorsrc,b40b1a8bf8b5eaee1b1c707034dbd5165a85a3de,2023-09-05T16:53:46Z,14509efe3fa74ac7505e52e0ea43d0be0f0fe763
 19725091,kimmy-wang,226603727,generator-lerna-generator,app/templates/lerna-quickstart/.all-contributorsrc,d52002e29e1527c4787603c007a4b3feff7c4948,2019-12-08T06:10:31Z,14818e45f131309ce9994c13888e63c6047add28
-77171880,scaevolabars,637381576,rustlings-solutions,.all-contributorsrc,ff9de4f51d1006325df6adb1d5a6666159150493,2023-05-07T11:48:12Z,2b0ffeaf3a44d6e5fe763ab57b6662fad8026d9e
 65933340,seanpm2001,297166677,SeansLifeArchive_Images_AdVenture_Communist,.github/All-ContributorSrc/JSON/V1.all-contributorsrc.json,5f68f8535f95cf2ae1039c78515158c5a4d26df2,2022-02-28T02:16:27Z,1fbf4bbc673cfe1bb9ed680f4fba412b6f55bbc8
 61180760,tiki,545642634,publish-sdk-flutter,.all-contributorsrc,b58523aaa460fc15852287d55445fa539ec7aeb6,2023-04-23T23:14:05Z,32c7d1b865332a48358a2ffc1294e828938e3314
 60790671,borkdominik,391065934,bigUML,.all-contributorsrc,15733ecbcf9217d4521827dcaa3375d89ec9755b,2023-11-28T12:05:05Z,a2e2a3a1f9c8cd23d5a67f6c9da7a10870b75b07
@@ -5757,7 +5755,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 138494736,peternish,689182147,OpenChat,.all-contributorsrc,2430d0637c70bbe4bd7e08409efe196d1d96a323,2023-07-20T19:48:58Z,8bc8106004c6c2b0055340aba70491b753403f00
 105612259,anitha8242,684934299,open,.all-contributorsrc,1dedd737165e916291ae147791a1fafd9a960fb1,2023-07-20T19:48:58Z,8bc8106004c6c2b0055340aba70491b753403f00
 7364245,briangann,69803338,grafana-gauge-panel,.all-contributorsrc,e308514e97b18f1200183cc20c1a5e17252630e4,2023-09-25T02:22:38Z,127542c5be6347865278e01cfba9436be838b32b
-25516557,nartc,689377895,ngxtension-platform,.all-contributorsrc,edbc50592bc496819eb88d0cacdf518e70685e68,2023-12-07T02:06:55Z,169b5d2c03f0010907e964594c7090252d240eb2
+25516557,nartc,689377895,ngxtension-platform,.all-contributorsrc,edbc50592bc496819eb88d0cacdf518e70685e68,2023-12-09T16:48:21Z,2d4b181cc431e4a35e388765315d16b549b66b7c
 8493007,mcnaveen,695250800,cart,.all-contributorsrc,fa3db1e6b0e719db44ee2c6c74cc049dd9cdb630,2023-09-22T17:43:30Z,27dd75a0fe299dbeee16fa5cb7a10d2e41720d5e
 8027933,AndreasAugustin,526718366,teaching,.all-contributorsrc,c95299bf0917e41c82f9d07433a40935dda08bad,2022-08-19T18:46:54Z,1a657bddee276cd7ac0061d26160783c6589f558
 136061549,X-oss-byte,695428003,starknet.go,.all-contributorsrc,a4312840474d9d745dad4e13ae0b983243b1af97,2023-07-11T13:47:12Z,364d6d6a5491f082da9b630a6d6f7357fae1d198
@@ -6974,3 +6972,7 @@ owner_id,owner_login,repo_id,repo_name,path,last_commit_sha,last_updated_at,last
 79604587,LucasLy,703160065,bot,.all-contributorsrc,243e77e6b25f170b582aca0c5bbb691fd7bc5e3d,2023-10-05T21:40:03Z,10f67f6718dfa0bdabd0feeac43e1c405b60a8e7
 30343453,pinellolab,537093072,DNA-Diffusion,.all-contributorsrc,9ad49d08e79dc33c5ba5af1edfb27b24720579a5,2023-12-05T20:41:37Z,3d711b3049c7295fc628cc2ce0c566cdab768d20
 13149241,royalcat,655726466,moodle-breaker,.all-contributorsrc,f6a74faa25994b44d8b1dc1170eaea4cedb64a31,2023-11-21T19:02:35Z,67cfa21c834790af47b54d10736069fa98c95824
+69191779,quarkiverse,597162470,quarkus-poi,.all-contributorsrc,41a3395d0a2b19d48334738c12d03a3190e0e116,2023-12-08T20:55:58Z,0bae606e3b503eb3549830601cec0ed673b825a8
+35381869,educational-technology-collective,690723511,jupyterlab-pioneer,.all-contributorsrc,ecee9ae6582e85c857664958831f2ec963e3abf4,2023-12-08T16:39:07Z,3afce7aeeacc58ab43281f6bf89ce37d67fca212
+9513634,s-weigand,362080524,jupyterlab_autosave_on_focus_change,.all-contributorsrc,8c92cc43f494f6a5aa46f4d4527d8b45825c6e67,2023-12-07T22:19:32Z,5ace3b119e93794eedac2fc6ae7ae76e996ca38a
+103274408,TCP-Lab,539987341,MTP-DB,.all-contributorsrc,6241cb1fd575d7f04caf416c98f467f78b7d6662,2023-04-21T14:24:57Z,6fc05da3a188b92751de588026c35088d7cb24c4
